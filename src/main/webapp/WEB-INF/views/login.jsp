@@ -1,22 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style type="text/css">@import url(css/login.css);</style>
 </head>
 <body>
-	
-		<div id="header">
-			
-				<h1>Archify Online Store</h1>
-		
-		</div>
-
-
-	
 	<div id="section">
 	<c:if test="${not empty error}">
 		<div cssStyle="color: red;" >
@@ -44,6 +37,5 @@
 	</spring:url>
 	<a href="${newCustomer}">New Customer</a>
 	</div>
-	
-
 </body>
+</html>	

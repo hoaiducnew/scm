@@ -13,11 +13,20 @@
        http://www.springframework.org/schema/data/jpa
      http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
+	<context:property-placeholder location="classpath:application.properties" />
+	
+	<!-- The jpa:repositories scans for all interfaces that extend  Repository and 
+		creates implementations for use at runtime.  -->
+	<jpa:repositories base-package="edu.mum.scm.dao" />
 
 	<context:component-scan base-package="edu.mum.scm.service" />
+	<context:component-scan base-package="edu.mum.scm.domain" />
+	<context:component-scan base-package="edu.mum.scm.repository" />
+	<!--  will remmove -->
 	<context:component-scan base-package="edu.mum.scm.dao" />
+	<!--  will remmove -->
 
-	<jpa:repositories base-package="edu.mum.scm.dao" />
+	
 
 
 	<bean id="multipartResolver"
@@ -28,9 +37,7 @@
 
 
 
-	<bean
-		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-		id="entityManager">
+	<bean id="entityManager" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property ref="dataSource" name="dataSource" />
 		<property name="packagesToScan" value="edu.mum.scm.domain" />
 		<property name="jpaVendorAdapter">
@@ -39,34 +46,28 @@
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
-				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="use_sql_comments">${use_sql_comments}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<!-- <prop key="hibernate.hbm2ddl.import_files">populate.sql</prop> -->
 			</props>
 		</property>
+	</bean>
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
 
 	</bean>
 
 
-	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-		id="dataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/scm" />
-		<property name="username" value="root" />
-		<property name="password" value="123456" />
-
-	</bean>
-
-
-	<bean class="org.springframework.orm.jpa.JpaTransactionManager"
-		id="transactionManager">
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" >
 		<property ref="entityManager" name="entityManagerFactory" />
-
 	</bean>
 
-	<context:component-scan base-package="edu.mum.scm.service" />
-	<context:component-scan base-package="edu.mum.scm.domain" />
-	<context:component-scan base-package="edu.mum.scm.dao" />
-	
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	<bean
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"

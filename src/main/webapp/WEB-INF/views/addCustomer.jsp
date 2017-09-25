@@ -61,7 +61,7 @@
 					<form:errors path="credentials.password" cssStyle="color: red;" />
 				</div>
 
-				<form:hidden path="credentials.role" value="ROLE_CUSTOMER" />
+				<form:hidden path="credentials.role" value="ROLE_USER" />
 				<div>
 
 					<input type="submit" id="submit" value="Register" />
