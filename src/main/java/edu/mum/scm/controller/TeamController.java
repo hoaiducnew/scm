@@ -60,4 +60,11 @@ public class TeamController {
 	public String getTeamDetails(@ModelAttribute Team team) {
 		return "team-details";
 	}
+	
+	
+	@RequestMapping(value = "/team-list", method = RequestMethod.GET)
+	public String getTeamDetails(Model model) {
+		model.addAttribute("teams", teamService.getAll());
+		return "team-list";
+	}
 }
