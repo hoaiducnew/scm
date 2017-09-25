@@ -37,7 +37,7 @@ public class Customer implements Serializable{
 
 	@Valid
 	@OneToOne(cascade=CascadeType.ALL)
-	Credentials credentials;
+	User credentials;
 
 	@OneToOne(mappedBy = "customer")
 	Account account;
@@ -91,11 +91,11 @@ public class Customer implements Serializable{
 	}
 
 	
-	public Credentials getCredentials() {
+	public User getCredentials() {
 		return credentials;
 	}
 
-	public void setCredentials(Credentials credentials) {
+	public void setCredentials(User credentials) {
 		this.credentials = credentials;
 	}
 

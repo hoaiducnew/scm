@@ -9,11 +9,14 @@ import javax.persistence.Id;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Credentials implements Serializable{
+public class User implements Serializable{
 
+	private static final long serialVersionUID = -5489747105831556775L;
+	
 	@Id
 	@GeneratedValue
 	Long id;
+	
 	@NotEmpty
 	String username;
 
