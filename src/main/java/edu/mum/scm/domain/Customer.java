@@ -1,38 +1,52 @@
 package edu.mum.scm.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.validation.Valid;
 
-@Entity(name = "CUSTOMER")
-public class Customer {
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+@Entity
+public class Customer implements Serializable{
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	@GeneratedValue
+	Long id;
 
-	private String firstName;
-	private String lastName;
-	private int age;
-	private String eyeColor;
+	@NotEmpty
+	String firstName;
 
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "customerId")
-	private List<Product> productList = new ArrayList<Product>();
+	@NotEmpty
+	String lastName;
 
-	public long getId() {
+	Date dateOfBirth;
+
+	@NotEmpty
+	@Email
+	String emailAdress;
+
+	@NotEmpty
+	String address;
+
+	@Valid
+	@OneToOne(cascade=CascadeType.ALL)
+	Credentials credentials;
+
+	@OneToOne(mappedBy = "customer")
+	Account account;
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -52,28 +66,46 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public int getAge() {
-		return age;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
-	public String getEyeColor() {
-		return eyeColor;
+	public String getEmailAdress() {
+		return emailAdress;
 	}
 
-	public void setEyeColor(String eyeColor) {
-		this.eyeColor = eyeColor;
+	public void setEmailAdress(String emailAdress) {
+		this.emailAdress = emailAdress;
 	}
 
-	public List<Product> getProductList() {
-		return productList;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setProductList(List<Product> productList) {
-		this.productList = productList;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
+	
+	public Credentials getCredentials() {
+		return credentials;
+	}
+
+	public void setCredentials(Credentials credentials) {
+		this.credentials = credentials;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+	
 }

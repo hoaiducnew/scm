@@ -1,15 +1,11 @@
 package edu.mum.scm.service;
 
-import java.util.List;
-
 import edu.mum.scm.domain.Customer;
 
 public interface CustomerService {
 
-	public Customer save(Customer customer);
+	public Customer fetchCustomer(String username);
 
-	public List<Customer> findAll();
-
-	public Customer findOne(Long id);
+	public void saveCustomer(Customer customer);
 
 }

@@ -1,15 +1,16 @@
 package edu.mum.scm.service.impl;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 
+import edu.mum.scm.dao.ProductDao;
+import edu.mum.scm.domain.Category;
 import edu.mum.scm.domain.Product;
-import edu.mum.scm.repository.ProductRepository;
+import edu.mum.scm.service.CategoryService;
 import edu.mum.scm.service.ProductService;
 
 @Service
@@ -17,46 +18,57 @@ import edu.mum.scm.service.ProductService;
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired
-	private ProductRepository productRepository;
+	ProductDao productdao;
+	
+	@Autowired
+	CategoryService categoryservice;;
 
 	public List<Product> getAllProducts() {
-		return productRepository.getAllProducts();
+
+		List<Product> products = (List<Product>)productdao.findAll();
+		for (Product product : products) {
+			product.setImageFile(Base64Utils.encodeToString(product.getCoverImage()));
+		}
+		return products;
 	}
 
-	public Product getProductById(String productID) {
-		return productRepository.getProductById(productID);
-	}
-
-	public List<Product> getProductsByCategory(String category) {
-		return productRepository.getProductsByCategory(category);
-	}
-
-	public Set<Product> getProductsByFilter(Map<String, List<String>> filterParams) {
-		List<String> params = filterParams.get("brand");
-		return productRepository.getProductsByFilter(params);
+	public Product getProduct(String productcode) {
+		return productdao.getProductByProductcode(productcode);
 	}
 
 	public void addProduct(Product product) {
-		productRepository.save(product);
-	}
-
-	public Product get(long productID) {
-		return productRepository.findOne(productID);
-	}
-
-	public List<Product> getProductsByDescOrder() {
-		return productRepository.getProductsByDescOrder();
-	}
-
-	// Cache in play because fetches are in same session
-	public Product getAddProduct(String desc) {
-		Product p = getProductById("P1235");
-		p = get(p.getId());
-
-		// Update
-		p.setDescription(desc);
-		addProduct(p);
-		return p;
+		productdao.save(product);
 
 	}
+
+	public void deleteProduct(Long productId) {
+		productdao.delete(productId);
+
+	}
+
+	public void editProduct(Product product) {
+		Product productToBeUpdated = productdao.findOne(product.getId());
+		productToBeUpdated.setCategory(product.getCategory());
+		productToBeUpdated.setDescription(product.getDescription());
+		productToBeUpdated.setName(product.getName());
+		productToBeUpdated.setImage(product.getImage());
+		productToBeUpdated.setCoverImage(product.getCoverImage());
+		productToBeUpdated.setQuantity(product.getQuantity());
+		productToBeUpdated.setProductcode(product.getProductcode());
+		productToBeUpdated.setUnitPrice(product.getUnitPrice());
+	}
+
+	public Product getUniqueProduct(Long productId) {
+		return productdao.findOne(productId);
+	}
+
+	public List<Product> getProductsById(Long id) {
+		Category category = categoryservice.getUniqueCategory(id);
+		List<Product> products = productdao.getProductByCategory(category);
+		for (Product product : products) {
+			product.setImageFile(Base64Utils.encodeToString(product.getCoverImage()));
+		}
+		return products;
+	}
+
 }

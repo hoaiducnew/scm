@@ -1,27 +1,20 @@
 package edu.mum.scm.service;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import edu.mum.scm.domain.Product;
 
 public interface ProductService {
+	public List<Product> getAllProducts();
+	
+	public void addProduct(Product product);
+	
+	public void deleteProduct(Long productId);
+	public void editProduct(Product product);
+	public Product getUniqueProduct(Long productId);
+	public List<Product> getProductsById(Long id);
 
-	List<Product> getAllProducts();
+	public Product getProduct(String productcode);
 
-	Product getProductById(String productID);
-
-	List<Product> getProductsByCategory(String category);
-
-	Set<Product> getProductsByFilter(Map<String, List<String>> filterParams);
-
-	void addProduct(Product product);
-
-	Product get(long id);
-
-	public Product getAddProduct(String desc);
-
-	List<Product> getProductsByDescOrder();
-
+	
 }
