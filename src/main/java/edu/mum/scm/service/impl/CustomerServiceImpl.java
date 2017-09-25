@@ -7,10 +7,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import edu.mum.scm.dao.CredentialsDao;
-import edu.mum.scm.dao.CustomerDao;
 import edu.mum.scm.domain.Credentials;
 import edu.mum.scm.domain.Customer;
+import edu.mum.scm.repository.CredentialsRepository;
+import edu.mum.scm.repository.CustomerRepository;
 import edu.mum.scm.service.CustomerService;
 
 @Service
@@ -18,10 +18,10 @@ import edu.mum.scm.service.CustomerService;
 public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
-	CustomerDao customerdao;
+	CustomerRepository customerdao;
 	
 	@Autowired
-	CredentialsDao credentialsdao;
+	CredentialsRepository credentialsdao;
 	
 	public Customer fetchCustomer(String username) {
 		Credentials credentials = credentialsdao.getCredentialsByUsername(username);

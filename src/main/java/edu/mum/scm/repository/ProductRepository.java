@@ -1,4 +1,4 @@
-package edu.mum.scm.dao;
+package edu.mum.scm.repository;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import edu.mum.scm.domain.Category;
 import edu.mum.scm.domain.Product;
 
 @Repository
-public interface ProductDao extends JpaRepository<Product, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
 	public Product getProductByProductcode(String productcode);
 
 	public List<Product> getProductByCategory(Category category);

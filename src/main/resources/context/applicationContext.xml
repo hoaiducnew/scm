@@ -17,25 +17,16 @@
 	
 	<!-- The jpa:repositories scans for all interfaces that extend  Repository and 
 		creates implementations for use at runtime.  -->
-	<jpa:repositories base-package="edu.mum.scm.dao" />
+	<jpa:repositories base-package="edu.mum.scm.repository" />
 
 	<context:component-scan base-package="edu.mum.scm.service" />
 	<context:component-scan base-package="edu.mum.scm.domain" />
 	<context:component-scan base-package="edu.mum.scm.repository" />
-	<!--  will remmove -->
-	<context:component-scan base-package="edu.mum.scm.dao" />
-	<!--  will remmove -->
-
-	
 
 
-	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="10240000" />
-
 	</bean>
-
-
 
 	<bean id="entityManager" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property ref="dataSource" name="dataSource" />

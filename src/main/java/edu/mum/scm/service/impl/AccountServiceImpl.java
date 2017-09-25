@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import edu.mum.scm.dao.AccountDao;
 import edu.mum.scm.domain.Account;
 import edu.mum.scm.domain.Cart;
 import edu.mum.scm.domain.Customer;
@@ -15,6 +14,7 @@ import edu.mum.scm.domain.Order;
 import edu.mum.scm.domain.OrderStatus;
 import edu.mum.scm.domain.Payment;
 import edu.mum.scm.domain.Product;
+import edu.mum.scm.repository.AccountRepository;
 import edu.mum.scm.service.AccountService;
 import edu.mum.scm.service.CustomerService;
 import edu.mum.scm.service.ProductService;
@@ -24,7 +24,7 @@ import edu.mum.scm.service.ProductService;
 public class AccountServiceImpl implements AccountService {
 
 	@Autowired
-	AccountDao accountdao;
+	AccountRepository accountdao;
 	@Autowired
 	ProductService productservice;
 	@Autowired

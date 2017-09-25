@@ -7,15 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import edu.mum.scm.dao.CategoryDao;
 import edu.mum.scm.domain.Category;
+import edu.mum.scm.repository.CategoryRepository;
 import edu.mum.scm.service.CategoryService;
 
 @Service
 @Transactional
 public class CategoryServiceImpl implements CategoryService {
 	@Autowired
-	CategoryDao categorydao;
+	CategoryRepository categorydao;
 
 	public void addCategory(Category category) {
 		categorydao.save(category);

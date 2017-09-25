@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import edu.mum.scm.dao.ProductDao;
 import edu.mum.scm.domain.Cart;
 import edu.mum.scm.domain.LineItem;
 import edu.mum.scm.domain.Product;
+import edu.mum.scm.repository.ProductRepository;
 import edu.mum.scm.service.CartService;
 
 @Service
@@ -17,7 +17,7 @@ import edu.mum.scm.service.CartService;
 public class CartServiceImpl implements CartService {
 
 	@Autowired
-	ProductDao productdao;
+	ProductRepository productdao;
 
 	public LineItem addToCart(String productcode, Cart cart) {
 		Product product = productdao.getProductByProductcode(productcode);

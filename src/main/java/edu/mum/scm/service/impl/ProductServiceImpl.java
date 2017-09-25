@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Base64Utils;
 
-import edu.mum.scm.dao.ProductDao;
 import edu.mum.scm.domain.Category;
 import edu.mum.scm.domain.Product;
+import edu.mum.scm.repository.ProductRepository;
 import edu.mum.scm.service.CategoryService;
 import edu.mum.scm.service.ProductService;
 
@@ -18,7 +18,7 @@ import edu.mum.scm.service.ProductService;
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired
-	ProductDao productdao;
+	ProductRepository productdao;
 	
 	@Autowired
 	CategoryService categoryservice;;
