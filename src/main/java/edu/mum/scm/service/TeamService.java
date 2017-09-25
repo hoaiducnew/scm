@@ -1,5 +1,7 @@
 package edu.mum.scm.service;
 
-public interface TeamService {
+import edu.mum.scm.domain.Team;
 
+public interface TeamService {
+	public Team save(Team team);
 }

@@ -49,6 +49,7 @@
 	</mvc:interceptors>
 
 	<mvc:resources mapping="/resource/**" location="/resources/" />
+	<mvc:resources mapping="/img/**" location="/resources/images/" />
 	<mvc:resources mapping="/css/**" location="/css/" />
 
 	<mvc:annotation-driven validator="validator" />

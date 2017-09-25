@@ -48,6 +48,27 @@
 		<put-attribute name="content" value="/WEB-INF/views/login.jsp" />
 	</definition>
 	
+	<definition name="team-add" extends="baseLayout">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="heading" value="Login" />
+		<put-attribute name="tagline" value="Enter your Credentials" />
+		<put-attribute name="content" value="/WEB-INF/views/team-add.jsp" />
+	</definition>
+	
+	<definition name="team-details" extends="baseLayout">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="heading" value="Login" />
+		<put-attribute name="tagline" value="Enter your Credentials" />
+		<put-attribute name="content" value="/WEB-INF/views/team-details.jsp" />
+	</definition>
+	
+	<definition name="team-list" extends="baseLayout">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="heading" value="Login" />
+		<put-attribute name="tagline" value="Enter your Credentials" />
+		<put-attribute name="content" value="/WEB-INF/views/team-list.jsp" />
+	</definition>
+	
 	<definition name="cart" extends="baseLayout">
 		<put-attribute name="title" value="Shpping Cart" />
 		<put-attribute name="heading" value="Cart" />
