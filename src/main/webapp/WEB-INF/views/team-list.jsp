@@ -8,8 +8,10 @@
 
 </head>
 <body>
-	${ team.name }
-	${ team.description } <br />
-	<img src="<c:url value="/img/${team.name}.jpg"></c:url>" alt="image" style="width:100%" />
+	<c:forEach items="${teams}" var="team">
+		${ team.name }
+		${ team.description } <br />
+		<img src="<c:url value="/img/${team.name}.jpg"></c:url>" alt="image" style="width:100%" />
+	</c:forEach>
 </body>
 </html>
