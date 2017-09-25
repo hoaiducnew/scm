@@ -20,12 +20,12 @@
 		<tr>
 			<td width="20%" valign="top"><table width="100%" border="1">
 					<tr>
-						<td class="header">Category</td>
+						<td class="header">Category1</td>
 					</tr>
 
-					<c:forEach var="category" items="${categories}">
+					<c:forEach var="p" items="${players}">
 						<tr>
-							<td><a href="${category.id}">${category.type}</a></td>
+							<td><p>${p.firstName}</a></td>
 						</tr>
 					</c:forEach>
 				</table></td>
