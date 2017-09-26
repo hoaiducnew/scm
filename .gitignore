@@ -138,4 +138,5 @@ buildNumber.properties
 
 # End of https://www.gitignore.io/api/maven,eclipse,intellij
 .idea/
-src/main/resources/application.properties
+
+scm.iml
