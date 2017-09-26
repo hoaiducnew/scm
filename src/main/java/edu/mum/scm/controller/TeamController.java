@@ -42,7 +42,9 @@ public class TeamController {
 		
 		if (image != null && !image.isEmpty()) {
 			try {
-				image.transferTo(new File(rootDirectory + "\\resources\\images\\" + team.getName() +".jpg"));
+				String imagePath = "team-" + team.getName() + System.currentTimeMillis() +".jpg";
+				image.transferTo(new File(rootDirectory + "\\resources\\images\\" + imagePath));
+				team.setImagePath(imagePath);
 			} catch (Exception e) {
 				throw new RuntimeException("Image saving failed", e);
 			}

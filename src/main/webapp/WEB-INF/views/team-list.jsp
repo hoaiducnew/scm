@@ -1,17 +1,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Archify Online Store</title>
+<c:forEach items="${teams}" var="team">
+	<div class="responsive">
+		<div class="gallery">
+			<a target="_blank" href="<c:url value="/img/${ team.imagePath }"></c:url>">
+				<img src="<c:url value="/img/${ team.imagePath }"></c:url>" alt="image"  width="300" height="200" />
+			</a>
+			<div class="desc">
+				<strong>${ team.name }</strong><br />
+				${ team.description }
+			</div>
+		</div>
+	</div>
+</c:forEach>
 
-</head>
-<body>
-	<c:forEach items="${teams}" var="team">
-		${ team.name }
-		${ team.description } <br />
-		<img src="<c:url value="/img/${team.name}.jpg"></c:url>" alt="image" style="width:100%" />
-	</c:forEach>
-</body>
-</html>
+<div class="clearfix"></div>
