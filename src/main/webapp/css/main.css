@@ -59,7 +59,17 @@ header, footer {
     text-align: center;
 }
 
+header h6 {
+	text-align: right;
+}
+
 .content {
 	width: 80%;
 	margin: 0 auto;
 }
+
+#header {width:100%;text-align:left;font-size: 12px;font-weight: bold;font-family: verdana; }
+#header ul { list-style:none; border-bottom:1px solid #eee; text-align: right }
+#header ul li { display:inline; text-transform:uppercase; padding:0 10px; color:#808080; }
+#header ul li a { text-decoration:none; color:#808080; }
+#header ul li a:hover { text-decoration:underline; }

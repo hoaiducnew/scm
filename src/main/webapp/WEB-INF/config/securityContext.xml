@@ -12,20 +12,14 @@
 	<security:http use-expressions="true">
 		<security:access-denied-handler error-page="/error-forbidden" />
 
-		<!-- 
-		<security:intercept-url pattern="/account/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
-		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
-		 -->
+		<security:intercept-url pattern="/**/*add" access="hasRole('ROLE_USER')" />
 
 		<security:form-login login-page="/login"
-			login-processing-url="/postLogin" 
-			username-parameter="username"
-			password-parameter="password" 
-			default-target-url="/loginsuccess"
-			always-use-default-target="true" 
-			authentication-failure-url="/loginfailed" />
-		
-		<security:logout logout-success-url="/logout" logout-url="/doLogout" />
+			login-processing-url="/postLogin" username-parameter="username"
+			password-parameter="password" default-target-url="/loginsuccess"
+			always-use-default-target="true" authentication-failure-url="/loginfailed" />
+		<security:logout logout-success-url="/logout"
+			logout-url="/doLogout" />
 	</security:http>
 
 	<security:authentication-manager>

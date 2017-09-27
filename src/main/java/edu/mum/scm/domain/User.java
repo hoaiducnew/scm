@@ -22,6 +22,12 @@ public class User implements Serializable{
 
 	@NotEmpty
 	String password;
+	
+	@NotEmpty
+	String firstName;
+
+	@NotEmpty
+	String lastName;
 
 	String role;
 
@@ -57,4 +63,19 @@ public class User implements Serializable{
 		this.role = role;
 	}
 
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 }
