@@ -38,6 +38,7 @@ public class PlayerController {
 
 	@RequestMapping(value = "/editPlayer/{id}", method = RequestMethod.GET)
 	public String ediPlayer(@ModelAttribute("playerForUpdated") Player player, Model model, @PathVariable("id") Long id) {
+		model.addAttribute("positions", playerService.getAllPositions());
 		Player playerForUpdated = playerService.getPlayer(id);
 
 		model.addAttribute("playerForUpdated", playerForUpdated);

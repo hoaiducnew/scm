@@ -68,14 +68,8 @@
 									<form:input type="text" class="textbox" path="birthday" id="birthday" />
 								</p>
 								<p>
-									<label class="label" for="playerPosition.position">Position</label>
-									<form:input type="text" class="textbox" path="playerPosition.position"
-										id="playerPosition.position" />
-								</p>
-								<p>
-									<label class="label" for="name">Position Description</label>
-									<form:input type="text" class="textbox" path="playerPosition.description"
-										id="playerPosition.description" />
+									<label for="position.id">Position</label>
+									<form:select path="position.id" items="${positions}" itemLabel="description" itemValue="id"/>
 								</p>
 								<p id="buttons">
 									<input type="submit" name="submit" type="submit" value="Save">

@@ -65,11 +65,7 @@
 							</tr>
 							<tr>
 								<td>Position</td>
-								<td>${playerForUpdated.playerPosition.position}</td>
-							</tr>
-							<tr>
-								<td>Position Description:</td>
-								<td>${playerForUpdated.playerPosition.description}</td>
+								<td>${playerForUpdated.position.description}</td>
 							</tr>
 						</table>
 
