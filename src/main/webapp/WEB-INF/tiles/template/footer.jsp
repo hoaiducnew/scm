@@ -1,3 +1,3 @@
 <br />
 <hr />
-<footer>Copyright &copy; MUM 2017</footer>
+<footer><spring:message code="copyright"/> &copy; MUM 2017</footer>

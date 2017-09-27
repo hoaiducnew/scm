@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <header>
-   <h1>Fantasy Premier League</h1>
+   	<h1><spring:message code="application.name"/></h1>
 	<h6>[<a href="?language=en">English</a> | <a href="?language=vn">Vietnamese</a>]</h6>
 </header>
 
