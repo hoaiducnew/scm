@@ -20,6 +20,10 @@ public class TeamNameValidator implements ConstraintValidator<TeamName, String>{
 
 	@Override
 	public boolean isValid(String teamName, ConstraintValidatorContext context) {
+		if (teamService == null) {
+			return true;
+		}
+		
 		Team team;
 		
 		try {
