@@ -13,10 +13,10 @@ import javax.validation.Payload;
 
 @Target( { METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = ProductcodeValidator.class)
+@Constraint(validatedBy = TeamNameValidator.class)
 @Documented
-public @interface Productcode {
-	String message() default "{edu.mum.scm.Productcode.message}";
+public @interface TeamName {
+	String message() default "{edu.mum.scm.validator.TeamName.message}";
 
     Class<?>[] groups() default {};
     

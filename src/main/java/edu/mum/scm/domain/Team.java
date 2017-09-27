@@ -14,6 +14,8 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
+import edu.mum.scm.validator.TeamName;
+
 @Entity
 public class Team implements Serializable {
 	private static final long serialVersionUID = 1940785060717948724L;
@@ -24,6 +26,7 @@ public class Team implements Serializable {
 	
 	@NotEmpty
 	@Size(min=3, max=50, message="{team.name.size.validation}")
+	@TeamName
 	private String name;
 	
 	private String description;

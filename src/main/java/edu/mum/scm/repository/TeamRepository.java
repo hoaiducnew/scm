@@ -7,5 +7,5 @@ import edu.mum.scm.domain.Team;
 
 @Repository
 public interface TeamRepository extends CrudRepository<Team, Long> {
-
+	Team getTeamByName(String name);
 }
