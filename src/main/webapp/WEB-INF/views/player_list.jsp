@@ -38,12 +38,14 @@
 							<tr>
 								<td><a href="detail/${player.id}">${player.firstName}  ${player.lastName}</a></td>
 								<td>${player.playerPosition.position}</td>
-								<td><a href="editPlayer/${player.id}">Edit</a> | <a href="deletePlayer/${player.id}">Delete</a></td>
+								<td><a class="player_edit" href="editPlayer/${player.id}">Edit</a>  <a class="player_delete" href="deletePlayer/${player.id}">Delete</a></td>
 							</tr>
 						</c:forEach>
 					</table>
 					<br>
-					<a href="add">Add Player</a> 
+					<div style="float: right"><a class="player_add" href="add">Add Player</a> </div>
+					
+
 				</form>
 			</td>
 		</tr>

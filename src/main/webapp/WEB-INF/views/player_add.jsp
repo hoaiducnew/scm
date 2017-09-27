@@ -36,33 +36,33 @@
 			
 				<form:form modelAttribute="addPlayer" enctype="multipart/form-data">
 				<form:errors path="*" cssStyle="Color:RED"></form:errors>
-						<fieldset> <legend>Edit Player</legend>
+						<fieldset> <legend><h1>Add Player</h1></legend>
 							<p>
-								<label for="firstName">first Name</label>
+								<label for="firstName">First Name</label>
 								<form:input path="firstName" id="firstName" />
 							</p>
 							<p>
-								<label for="lastName">last Name</label>
+								<label for="lastName">Last Name</label>
 								<form:input path="lastName" id="lastName" />
 							</p>
 							<p>
-								<label for="biography">biography</label>
+								<label for="biography">Biography</label>
 								<form:input path="biography" id="biography" />
 							</p>
 							<p>
-								<label for="salary">salary</label>
+								<label for="salary">Salary</label>
 								<form:input path="salary" id="salary" />
 							</p>
 							<p>
-								<label for="birthday">birthday</label>
+								<label for="birthday">Birthday</label>
 								<form:input path="birthday" id="birthday" />
 							</p>
 							<p>
-								<label for="playerPosition.position">playerPosition</label>
+								<label for="playerPosition.position">Position</label>
 								<form:input path="playerPosition.position" id="playerPosition.position" />
 							</p>
 							<p>
-								<label for="name">Position Description</label>
+								<label for="name">Description</label>
 								<form:input path="playerPosition.description" id="playerPosition.description" />
 							</p>
 							<p>

@@ -1,7 +1,6 @@
 h2 {
-	 padding-left: 700px;
+	padding-left: 700px;
 }
-
 
 #myImg {
 	border-radius: 5px;
@@ -115,4 +114,89 @@ th, td {
 
 tr:nth-child(even) {
 	background-color: #f2f2f2
+}
+
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 100%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+.form_playerEdit {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+
+#addPlayer {
+	width: 60%;
+	padding-left: 200px;
+}
+
+.player_add {
+	background-color: white;
+	color: black;
+	border: 2px solid #4CAF50;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin-left: 20px;
+}
+
+.player_add:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+.player_edit {
+	background-color: white;
+	color: black;
+	border: 2px solid #ecb22f;
+	padding: 4px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin-left: 20px;
+}
+
+.player_edit:hover {
+	background-color: #ecb22f;
+	color: white;
+}
+.player_delete {
+	background-color: white;
+	color: black;
+	border: 2px solid red;
+	padding: 4px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin-left: 20px;
+}
+
+.player_delete:hover {
+	background-color: red;
+	color: white;
 }

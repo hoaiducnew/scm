@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -22,9 +15,8 @@
 	src="<spring:url value="/resource/js/cart.js"/>"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
-<style type="text/css">
-@import url(css/players.css);
-</style>
+
+<link href="<c:url value="/css/players.css" />" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="headerClient.jsp"%>
@@ -39,62 +31,67 @@
 					</tr>
 				</table>
 			</td>
-			<td width="60%" valign="top">
-			
-				<form:form modelAttribute="playerForUpdated" method="POST" enctype="multipart/form-data" action="/scm/editPlayer/${playerForUpdated.id}">
-				<form:errors path="*" cssStyle="Color:RED"></form:errors>
-						<fieldset> <legend>Edit Player</legend>
+			<td width="60%" valign="top"><form:form
+					modelAttribute="playerForUpdated" method="POST"
+					enctype="multipart/form-data"
+					action="/scm/editPlayer/${playerForUpdated.id}">
+					<form:errors path="*" cssStyle="Color:RED"></form:errors>
+					<fieldset>
+						<legend>Edit Player</legend>
 						<div style="float: left">
-							<p>Image:</p>
-							<img
+							<img id="myImg"
 								src="<c:url value="/img/${playerForUpdated.firstName}.jpg"></c:url>"
-								alt="image" style="width: 100%" />
+								alt="image" />
 						</div>
-						<div>
-							<p>
-								<label for="firstName">first Name</label>
-								<form:input path="firstName" id="firstName" />
-							</p>
-							<p>
-								<label for="lastName">last Name</label>
-								<form:input path="lastName" id="lastName" />
-							</p>
-							<p>
-								<label for="biography">biography</label>
-								<form:input path="biography" id="biography" />
-							</p>
-							<p>
-								<label for="salary">salary</label>
-								<form:input path="salary" id="salary" />
-							</p>
-							<p>
-								<label for="birthday">birthday</label>
-								<form:input path="birthday" id="birthday" />
-							</p>
-							<p>
-								<label for="playerPosition.position">playerPosition</label>
-								<form:input path="playerPosition.position"
-									id="playerPosition.position" />
-							</p>
-							<p>
-								<label for="name">Position Description</label>
-								<form:input path="playerPosition.description"
-									id="playerPosition.description" />
-							</p>
+						<div class = "form_playerEdit">
+
+							<h2>${playerForUpdated.firstName} Information:</h2>
+							<div style="padding-left: 600px;">
+								<p>
+									<label class="label" for="firstName">First Name</label>
+									<form:input type="text" class="textbox" path="firstName" id="firstName" />
+								</p>
+								<p>
+									<label class="label" for="lastName">Last Name</label>
+									<form:input type="text" class="textbox" path="lastName" id="lastName" />
+								</p>
+								<p>
+									<label class="label" for="biography">Biography</label>
+									<form:input type="text" class="textbox" path="biography" id="biography" />
+								</p>
+								<p>
+									<label class="label" for="salary">Salary</label>
+									<form:input type="text" class="textbox" path="salary" id="salary" />
+								</p>
+								<p>
+									<label class="label" for="birthday">Birthday</label>
+									<form:input type="text" class="textbox" path="birthday" id="birthday" />
+								</p>
+								<p>
+									<label class="label" for="playerPosition.position">Position</label>
+									<form:input type="text" class="textbox" path="playerPosition.position"
+										id="playerPosition.position" />
+								</p>
+								<p>
+									<label class="label" for="name">Position Description</label>
+									<form:input type="text" class="textbox" path="playerPosition.description"
+										id="playerPosition.description" />
+								</p>
+								<p id="buttons">
+									<input type="submit" name="submit" type="submit" value="Save">
+								</p>
+							</div>
+
 						</div>
 
 
 
-						<p id="buttons">
-							<input name="submit" type="submit" value="Save">
-						</p>
+						
 					</fieldset>
-					</form:form> 
-				
-			</td>
+				</form:form></td>
 		</tr>
 	</table>
-	
+
 	<%@ include file="footerClient.jsp"%>
 </body>
 </html>
