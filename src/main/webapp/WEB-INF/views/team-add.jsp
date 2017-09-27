@@ -14,7 +14,7 @@
 	<fieldset>
 		 <legend>Add new team</legend>
 	
-		<form:errors path="*" class="w3-red" />
+		<form:errors path="*" class="w3-red" element="div"/>
 		
 		<p>
 			<label for="name">Name *: </label>

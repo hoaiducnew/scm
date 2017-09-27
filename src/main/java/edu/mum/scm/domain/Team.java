@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
@@ -24,7 +23,7 @@ public class Team implements Serializable {
 	private Long id;
 	
 	@NotEmpty
-	@Size(min = 3, max = 50, message="${Team.Name.Size}")
+	@Size(min=3, max=50, message="{team.name.size.validation}")
 	private String name;
 	
 	private String description;
