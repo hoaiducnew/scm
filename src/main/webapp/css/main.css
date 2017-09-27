@@ -1,86 +1,65 @@
-#global {
-    text-align: left;
-    border: 1px solid #dedede;
-    background: #efefef;
-    width: 560px;
-    padding: 20px;
-    margin: 100px auto;
+div.gallery {
+    border: 1px solid #ccc;
 }
 
-form {
-  font:100% verdana;
-  min-width: 500px;
-  max-width: 600px;
-  width: 560px;
+div.gallery:hover {
+    border: 1px solid #777;
 }
 
-form fieldset {
-  border-color: #bdbebf;
-  border-width: 3px;
-  margin: 0;
+div.gallery img {
+    width: 100%;
+    height: auto;
 }
 
-legend {
-    font-size: 1.3em;
+div.desc {
+    padding: 15px;
+    text-align: center;
 }
 
-/*
-form label { 
-    width: 250px;
-    display: block;
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 6px;
     float: left;
-    text-align: right;
-    padding: 2px;
-}
-*/
-table td {
-	border: 1px solid #dedede;
-	background: MistyRose;
-	/* for web colors visit http://en.wikipedia.org/wiki/Web_colors */
+    width: 19%;
 }
 
-#buttons {
-    text-align: right;
-}
-#errors, li {
-	color: FireBrick;
-}
-.error {
-    color: red;
-    font-size: 9pt;	
+.responsive-player {
+    padding: 6px;
+    float: left;
+    width: 24%;
 }
 
- #formInput {
-	position:absolute;
-    top:  200px;
-    left: 275px;
-	background-color:LightCyan;	
-	width:375px;
-	height:270px;
-	z-index: 9002;
-   	border-style: solid;
-    border-color: blue;
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
 }
 
- #result {
-	position:absolute;
-    top:  50px;
-    left: 275px;
-	background-color:LightBlue;	
-	width:375px;
-	height:175px;
-	z-index: 9002;
-   	border-style: solid;
-    border-color: blue;
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
 }
 
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
-#rightList{
-     position:absolute;
-     width:350px;
-     height:50px;
-     z-index:15;
-      top:10%;  
-     left:40%;
-     background: #efefef;
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #446CB3;
+    clear: left;
+    text-align: center;
+}
+
+.content {
+	width: 80%;
+	margin: 0 auto;
 }

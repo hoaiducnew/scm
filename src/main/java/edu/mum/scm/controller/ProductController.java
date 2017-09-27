@@ -26,7 +26,7 @@ import edu.mum.scm.service.CategoryService;
 import edu.mum.scm.service.ProductService;
 
 @Controller
-@RequestMapping("/admin")
+//@RequestMapping("/admin")
 public class ProductController {
 
 	@Autowired

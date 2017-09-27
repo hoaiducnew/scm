@@ -24,7 +24,7 @@
 	</bean>
 
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basename" value="messages" />
+		<property name="basename" value="messages,errorMessages" />
 	</bean>
 
 	<bean id="messageAccessor" class="org.springframework.context.support.MessageSourceAccessor">
@@ -49,6 +49,7 @@
 	</mvc:interceptors>
 
 	<mvc:resources mapping="/resource/**" location="/resources/" />
+	<mvc:resources mapping="/img/**" location="/resources/images/" />
 	<mvc:resources mapping="/css/**" location="/css/" />
 
 	<mvc:annotation-driven validator="validator" />

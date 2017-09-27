@@ -34,10 +34,7 @@ public class LoginController {
 
 	@RequestMapping("/")
 	public String homePage(Model model) {
-		if (!model.containsAttribute("cart")) {
-			model.addAttribute("cart", new Cart());
-		}
-		return "home";
+		return "redirect:/teams";
 
 	}
 
