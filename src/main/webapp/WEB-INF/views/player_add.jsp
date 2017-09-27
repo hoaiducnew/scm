@@ -58,12 +58,8 @@
 								<form:input path="birthday" id="birthday" />
 							</p>
 							<p>
-								<label for="playerPosition.position">Position</label>
-								<form:input path="playerPosition.position" id="playerPosition.position" />
-							</p>
-							<p>
-								<label for="name">Description</label>
-								<form:input path="playerPosition.description" id="playerPosition.description" />
+								<label for="position.id">Position</label>
+								<form:select path="position.id" items="${positions}" itemLabel="description" itemValue="id"/>
 							</p>
 							<p>
 								<label for="image" class="control-label col-lg-2">Images: </label>

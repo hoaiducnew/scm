@@ -5,12 +5,28 @@
 <tiles-definitions>
 	
 	<definition name="baseLayout" template="/WEB-INF/tiles/template/baseLayout.jsp">
-		<put-attribute name="title" value="Sample Title" />
+		<put-attribute name="title" value="Fantasy Premier League" />
 		<put-attribute name="heading" value="" />
 		<put-attribute name="tagline" value="" />
 		<put-attribute name="header" value="/WEB-INF/tiles/template/header.jsp" />
 		<put-attribute name="content" value="" />
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp" />
+	</definition>
+
+	<definition name="team-list" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/team-list.jsp" />
+	</definition>	
+	
+	<definition name="team-add" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/team-add.jsp" />
+	</definition>
+	
+	<definition name="team-details" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/team-details.jsp" />
+	</definition>
+	
+	<definition name="player_list" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/player_list.jsp" />
 	</definition>
 	
 	<definition name="welcome" extends="baseLayout">
@@ -48,26 +64,7 @@
 		<put-attribute name="content" value="/WEB-INF/views/login.jsp" />
 	</definition>
 	
-	<definition name="team-add" extends="baseLayout">
-		<put-attribute name="title" value="Login" />
-		<put-attribute name="heading" value="Login" />
-		<put-attribute name="tagline" value="Enter your Credentials" />
-		<put-attribute name="content" value="/WEB-INF/views/team-add.jsp" />
-	</definition>
-	
-	<definition name="team-details" extends="baseLayout">
-		<put-attribute name="title" value="Login" />
-		<put-attribute name="heading" value="Login" />
-		<put-attribute name="tagline" value="Enter your Credentials" />
-		<put-attribute name="content" value="/WEB-INF/views/team-details.jsp" />
-	</definition>
-	
-	<definition name="team-list" extends="baseLayout">
-		<put-attribute name="title" value="Login" />
-		<put-attribute name="heading" value="Login" />
-		<put-attribute name="tagline" value="Enter your Credentials" />
-		<put-attribute name="content" value="/WEB-INF/views/team-list.jsp" />
-	</definition>
+
 	
 	<definition name="cart" extends="baseLayout">
 		<put-attribute name="title" value="Shpping Cart" />

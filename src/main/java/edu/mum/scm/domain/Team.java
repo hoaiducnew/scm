@@ -1,13 +1,15 @@
 package edu.mum.scm.domain;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -31,6 +33,9 @@ public class Team implements Serializable {
 	
     @Transient
     private MultipartFile image;
+    
+    @OneToMany(mappedBy = "team")
+    private Set<Player> players;
 
 	public Long getId() {
 		return id;
@@ -67,4 +72,13 @@ public class Team implements Serializable {
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
+
+	public Set<Player> getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(Set<Player> players) {
+		this.players = players;
+	}
+	
 }

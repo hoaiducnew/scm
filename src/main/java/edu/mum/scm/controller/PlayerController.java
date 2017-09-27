@@ -1,10 +1,6 @@
 package edu.mum.scm.controller;
 
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-
 import java.io.File;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,25 +8,30 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.mum.scm.domain.Player;
+import edu.mum.scm.domain.Team;
 import edu.mum.scm.service.PlayerService;
 
 @Controller
+@SessionAttributes({ "team"})
 public class PlayerController {
 
 	@Autowired
 	PlayerService playerService;
-
+	
 	@RequestMapping(value = "/listPlayer", method = RequestMethod.GET)
 	public String allPlayers(Model model) {
-		List<Player> players = playerService.getAllPlayer();
+		List<Player> players = playerService.getAllPlayer((Team) model.asMap().get("team"));
 		model.addAttribute("players", players);
 		return "player_list";
 	}
@@ -56,6 +57,7 @@ public class PlayerController {
 
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String addPlayer(@ModelAttribute("addPlayer") Player player, Model model) {
+		model.addAttribute("positions", playerService.getAllPositions());
 		return "player_add";
 	}
 
@@ -79,7 +81,9 @@ public class PlayerController {
 		String path = rootDirectory + "\\resources\\images\\" + player.getFirstName() + ".jpg";
 		player.setImagePath(path);
 		
-		playerService.addPlayer(player);
+		player.setTeam((Team) model.asMap().get("team"));
+		player.setPosition(playerService.getPosition(1L));
+		playerService.createPlayer(player);
 		redirectAttributes.addFlashAttribute("player", player);
 		// Long catId = player.getId();
 		redirectAttributes.addFlashAttribute("message", "Added successfully.");

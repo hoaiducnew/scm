@@ -1,5 +1,5 @@
 <header>
-   <h1>Soccer Clubs Manager</h1>
+   <h1>Fantasy Premier League</h1>
 </header>
 
 <hr />

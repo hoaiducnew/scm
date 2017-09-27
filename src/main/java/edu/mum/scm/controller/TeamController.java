@@ -12,6 +12,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -20,6 +22,7 @@ import edu.mum.scm.service.TeamService;
 
 @RequestMapping("/teams")
 @Controller
+@SessionAttributes({ "team" })
 public class TeamController {
 
 	@Autowired
@@ -31,8 +34,7 @@ public class TeamController {
 	}
 
 	@RequestMapping(value = { "/team-add" }, method = RequestMethod.POST)
-	public String processAddTeamForm(@Valid @ModelAttribute Team team, BindingResult bindingresult,
-			Model model, HttpServletRequest request, RedirectAttributes redirectAttributes) {
+	public String processAddTeamForm(@Valid @ModelAttribute Team team, BindingResult bindingresult, HttpServletRequest request) {
 		if (bindingresult.hasErrors()) {
 			return "team-add";
 		}
@@ -52,20 +54,18 @@ public class TeamController {
 		
 		team = teamService.save(team);
 		
-		
-		redirectAttributes.addFlashAttribute("team", team);
-
-		return "redirect:/teams/team-details";
+		return "redirect:/teams";
 	}
 	
-	@RequestMapping(value = "/team-details", method = RequestMethod.GET)
-	public String getTeamDetails(@ModelAttribute Team team) {
-		return "team-details";
+	@RequestMapping(value = "/team")
+	public String getTeamDetails(@RequestParam("id") Long teamId, Model model, RedirectAttributes redirectAttributes) {
+		model.addAttribute("team", teamService.getById(teamId));
+//		redirectAttributes.addFlashAttribute("team", teamService.getById(teamId));
+		return "redirect:/listPlayer";
 	}
 	
-	
-	@RequestMapping(value = "/team-list", method = RequestMethod.GET)
-	public String getTeamDetails(Model model) {
+	@RequestMapping
+	public String getAll(Model model) {
 		model.addAttribute("teams", teamService.getAll());
 		return "team-list";
 	}

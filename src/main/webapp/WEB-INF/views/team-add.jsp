@@ -19,7 +19,6 @@
 		<p>
 			<label for="name">Name *: </label>
 			<form:input path="name" /> <br />
-			<form:errors path="name" class="w3-red" />
 		</p>
 
 		<p>
