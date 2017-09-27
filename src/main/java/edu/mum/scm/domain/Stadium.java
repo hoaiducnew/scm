@@ -2,6 +2,87 @@ package edu.mum.scm.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+@Entity
 public class Stadium implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8980432955463312560L;
+	
+	@Id
+	@GeneratedValue
+	private Long Id;
+	
+	@NotEmpty
+	@Size(max=50, min=5)
+	private String name;
+	
+	private String description;
+	
+	private String capacity;
+	
+	private String image;
+	
+	@OneToOne
+	@JoinColumn(name="address_id")
+	private Address address;
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(String capacity) {
+		this.capacity = capacity;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
 }
