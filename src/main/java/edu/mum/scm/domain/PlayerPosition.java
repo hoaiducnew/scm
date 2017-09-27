@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -14,8 +15,10 @@ public class PlayerPosition implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@Size(min = 2, max = 2, message ="position must be 2 characters")
 	private String position;
 	
+	@Size(min = 1, max = 200, message ="description must from 1 to 200")
 	private String description;
 
 	public Long getId() {

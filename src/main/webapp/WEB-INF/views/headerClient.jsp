@@ -1,6 +1,6 @@
 
 <div style="text-align:center">
-<h1>Archify Online Store</h1>
+<h1>Soccer Club Management</h1>
 </div>
 <div style="float: right">
 	<c:choose>

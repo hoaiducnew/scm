@@ -40,7 +40,7 @@ public class PlayerServiceImpl implements PlayerService {
 		playerTobeUpdated.setBiography(player.getBiography());
 		playerTobeUpdated.setBirthday(player.getBirthday());
 		playerTobeUpdated.setFirstName(player.getFirstName());
-		playerTobeUpdated.setLastName(player.getFirstName());
+		playerTobeUpdated.setLastName(player.getLastName());
 		playerTobeUpdated.setPlayerId(player.getPlayerId());
 		playerTobeUpdated.setPlayerPosition(player.getPlayerPosition());
 		playerTobeUpdated.setSalary(player.getSalary());
