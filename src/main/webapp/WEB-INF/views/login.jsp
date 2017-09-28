@@ -12,8 +12,7 @@
 </style>
 </head>
 <body>
-	<form class="form-1"
-		action="<spring:url value="/postLogin"></spring:url>" method="post">
+	<form action="<spring:url value="/postLogin"></spring:url>" method="post">
 		<div class="imgcontainer">
 			<img src="<c:url value="/img/avatar.png" />" alt="Avatar"
 				class="avatar" />
@@ -26,13 +25,8 @@
 				required>
 
 			<button type="submit">Login</button>
-			<input type="checkbox" checked="checked"> Remember me
-		</div>
-
-		<div class="container" style="background-color: #f1f1f1">
-			<button type="button" class="cancelbtn">Cancel</button>
 			<spring:url value="/users/register" var="newUser"></spring:url>
-			<span class="psw"><a href="${newUser}">New User</a></span>
+			<span class="psw"><a href="${newUser}">Register New User</a></span>
 		</div>
 	</form>
 </body>

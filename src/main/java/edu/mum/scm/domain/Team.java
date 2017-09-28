@@ -25,7 +25,7 @@ public class Team implements Serializable {
 	private Long id;
 	
 	@NotEmpty
-	@Size(min=3, max=50, message="{team.name.size.validation}")
+	@Size(min=4, max=50, message="{team.name.size.validation}")
 	@TeamName
 	private String name;
 	
