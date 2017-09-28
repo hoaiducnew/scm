@@ -15,26 +15,26 @@ import edu.mum.scm.service.FanClubService;
 public class FanClubServieImpl implements FanClubService {
 
 	@Autowired
-	FanClubRepository fanclubRepo;
+	FanClubRepository fanClubRepository;
 
 	@Override
 	public List<FanClub> getAllFanClub() {
-		return (List<FanClub>) fanclubRepo.findAll();
+		return (List<FanClub>) fanClubRepository.findAll();
 	}
 
 	@Override
 	public void addFanClub(FanClub fanClub) {
-		fanclubRepo.save(fanClub);
+		fanClubRepository.save(fanClub);
 	}
 
 	@Override
 	public void deleteFanClub(FanClub fanClub) {
-		fanclubRepo.delete(fanClub);
+		fanClubRepository.delete(fanClub);
 	}
 
 	@Override
 	public void editFanclub(FanClub fanClub) {
-		FanClub fanclubEdit = fanclubRepo.findOne(fanClub.getId());
+		FanClub fanclubEdit = fanClubRepository.findOne(fanClub.getId());
 		fanclubEdit.setName(fanClub.getName());
 		fanclubEdit.setDescription(fanClub.getDescription());
 		fanclubEdit.setEmail(fanClub.getEmail());
