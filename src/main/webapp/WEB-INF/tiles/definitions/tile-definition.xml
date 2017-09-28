@@ -68,4 +68,8 @@
 	<definition name="login" extends="baseLayout">
 		<put-attribute name="content" value="/WEB-INF/views/login.jsp" />
 	</definition>
+
+	<definition name="user-register" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/user-register.jsp" />
+	</definition>
 </tiles-definitions>

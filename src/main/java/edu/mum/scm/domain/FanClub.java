@@ -5,8 +5,11 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+<<<<<<< HEAD
 import javax.persistence.Transient;
 import javax.validation.constraints.Max;
+=======
+>>>>>>> 8afbc4d8c3fa7857477ed8f6355abdad080b3f39
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -53,6 +56,7 @@ public class FanClub implements Serializable {
 	@Min(value=1)
 	private Integer numberOfMembers;
 
+<<<<<<< HEAD
 	public Long getId() {
 		return id;
 	}
@@ -61,6 +65,8 @@ public class FanClub implements Serializable {
 		this.id = id;
 	}
 
+=======
+>>>>>>> 8afbc4d8c3fa7857477ed8f6355abdad080b3f39
 	public String getName() {
 		return name;
 	}
@@ -85,6 +91,17 @@ public class FanClub implements Serializable {
 		this.leader = leader;
 	}
 
+<<<<<<< HEAD
+=======
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+>>>>>>> 8afbc4d8c3fa7857477ed8f6355abdad080b3f39
 	public String getEmail() {
 		return email;
 	}
@@ -101,6 +118,7 @@ public class FanClub implements Serializable {
 		this.phone = phone;
 	}
 
+<<<<<<< HEAD
 	public String getImagePath() {
 		return imagePath;
 	}
@@ -125,6 +143,8 @@ public class FanClub implements Serializable {
 		this.address = address;
 	}
 
+=======
+>>>>>>> 8afbc4d8c3fa7857477ed8f6355abdad080b3f39
 	public Integer getNumberOfMembers() {
 		return numberOfMembers;
 	}
@@ -132,5 +152,13 @@ public class FanClub implements Serializable {
 	public void setNumberOfMembers(Integer numberOfMembers) {
 		this.numberOfMembers = numberOfMembers;
 	}
+<<<<<<< HEAD
+=======
+
+	public Long getId() {
+		return id;
+	}
+	
+>>>>>>> 8afbc4d8c3fa7857477ed8f6355abdad080b3f39
 	
 }

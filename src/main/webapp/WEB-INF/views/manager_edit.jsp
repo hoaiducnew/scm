@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Player List</title>
+<title>Manager List</title>
 <script type="text/javascript"
 	src="<spring:url value="/resource/js/cart.js"/>"></script>
 <script
@@ -27,56 +27,50 @@
 			<td width="20%" valign="top">
 				<table width="100%" border="1">
 					<tr>
-						<td class="header">Player</td>
+						<td class="header">Manager</td>
 					</tr>
 				</table>
 			</td>
-			<td width="60%" valign="top"><form:form
-					modelAttribute="playerForUpdated" method="POST"
+			<td width="60%" valign="top">
+			<form:form modelAttribute="managerForUpdated" method="POST"
 					enctype="multipart/form-data"
-					action="/scm/editPlayer/${playerForUpdated.id}">
+					action="/scm/editManager/${managerForUpdated.id}">
 					<form:errors path="*" cssStyle="Color:RED"></form:errors>
 					<fieldset>
-						<legend>Edit Player</legend>
+						<legend>Edit Manager</legend>
 						<div style="float: left">
-							<img id="myImg" class="player_img_edit"
-								src="<c:url value="/img/${playerForUpdated.playerId}.jpg"></c:url>"
+							<img id="myImg" class="Manager_img_edit"
+								src="<c:url value="/img/${managerForUpdated.managerId}.jpg"></c:url>"
 								alt="image" />
 						</div>
-						<div class = "form_playerEdit">
+						<div class="form_ManagerEdit">
 
-							<h2>${playerForUpdated.firstName} Information:</h2>
+							<h2>${managerForUpdated.firstName} Information:</h2>
 							<div style="padding-left: 600px;">
 								<p>
 									<label class="label" for="firstName">First Name</label>
-									<form:input type="text" class="textbox" path="firstName" id="firstName" />
+									<form:input type="text" class="textbox" path="firstName"
+										id="firstName" />
 								</p>
 								<p>
 									<label class="label" for="lastName">Last Name</label>
-									<form:input type="text" class="textbox" path="lastName" id="lastName" />
+									<form:input type="text" class="textbox" path="lastName"
+										id="lastName" />
 								</p>
 								<p>
 									<label class="label" for="biography">Biography</label>
-									<form:input type="text" class="textbox" path="biography" id="biography" />
+									<form:input type="text" class="textbox" path="biography"
+										id="biography" />
 								</p>
 								<p>
 									<label class="label" for="salary">Salary</label>
-									<form:input type="text" class="textbox" path="salary" id="salary" />
+									<form:input type="text" class="textbox" path="salary"
+										id="salary" />
 								</p>
 								<p>
 									<label class="label" for="birthday">Birthday</label>
-									<form:input type="text" class="textbox" path="birthday" id="birthday" />
-								</p>
-								<p>
-									<label for="playerPosition.position">Position</label>
-									<form:select path="playerPosition.position" id="playerPosition.position">
-										<form:options path="playerPosition.position" items="${positions}" />
-									</form:select>
-								</p>
-								<p>
-									<label class="label" for="name">Position Description</label>
-									<form:input type="text" class="textbox" path="playerPosition.description"
-										id="playerPosition.description" />
+									<form:input type="text" class="textbox" path="birthday"
+										id="birthday" />
 								</p>
 								<p id="buttons">
 									<input type="submit" name="submit" type="submit" value="Save">
@@ -87,7 +81,7 @@
 
 
 
-						
+
 					</fieldset>
 				</form:form></td>
 		</tr>

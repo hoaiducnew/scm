@@ -3,17 +3,22 @@ package edu.mum.scm.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Transient;
+import javax.validation.Valid;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
+
+import edu.mum.scm.validator.PlayerId;
 
 @Entity
 public class Player implements Serializable {
@@ -24,14 +29,16 @@ public class Player implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@PlayerId
 	private String playerId;
 	
-	@Size(min = 4, max = 40, message = "firstName must > 4")
+	@Size(min = 4, max = 40, message = "FirstName must lager than 4 characters")
 	private String firstName;
 	
-	@Size(min = 4, message = "lastName must > 4")
+	@Size(min = 4, message = "LastName must lager than 4 characters")
 	private String lastName;
-	@Size(min = 4, message = "biography must > 4")
+	
+	@Size(min = 4, message = "Biography must lager than 4 characters")
 	private String biography;
 	
 	private Double salary;
@@ -41,16 +48,25 @@ public class Player implements Serializable {
 	
 	private String imagePath;
 	
-	@Transient
-	private MultipartFile image;
+	 @Transient
+	 private MultipartFile image;
 	
-	@ManyToOne
-	@JoinColumn(name="position_id")
-	private Position position;
+	@Valid
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="Id")
+	private PlayerPosition playerPosition;
 	
 	@ManyToOne
 	@JoinColumn(name="team_id")
 	private Team team;
+
+	public Team getTeam() {
+		return team;
+	}
+
+	public void setTeam(Team team) {
+		this.team = team;
+	}
 
 	public Long getId() {
 		return id;
@@ -108,12 +124,12 @@ public class Player implements Serializable {
 		this.birthday = birthday;
 	}
 
-	public Position getPosition() {
-		return position;
+	public PlayerPosition getPlayerPosition() {
+		return playerPosition;
 	}
 
-	public void setPosition(Position position) {
-		this.position = position;
+	public void setPlayerPosition(PlayerPosition playerPosition) {
+		this.playerPosition = playerPosition;
 	}
 	public MultipartFile getImage() {
 		return image;
@@ -129,14 +145,6 @@ public class Player implements Serializable {
 
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
-	}
-
-	public Team getTeam() {
-		return team;
-	}
-
-	public void setTeam(Team team) {
-		this.team = team;
 	}
 	
 }

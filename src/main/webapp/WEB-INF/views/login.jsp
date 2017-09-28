@@ -14,18 +14,15 @@
 <body>
 	<form action="<spring:url value="/postLogin"></spring:url>" method="post">
 		<div class="imgcontainer">
-			<img src="<c:url value="/img/avatar.png" />" alt="Avatar"
-				class="avatar" />
+			<img src="<c:url value="/img/avatar.png" />" alt="Avatar" class="avatar" />
 		</div>
 
 		<div class="container">
-			<label><b>Username</b></label> <input type="text"
-				placeholder="Enter Username" name="username" required> <label><b>Password</b></label>
-			<input type="password" placeholder="Enter Password" name="password"
-				required>
+			<label><b>Username</b></label> <input type="text" placeholder="Enter Username" name="username" required> 
+			<label><b>Password</b></label> <input type="password" placeholder="Enter Password" name="password" required>
 
 			<button type="submit">Login</button>
-			<spring:url value="/users/register" var="newUser"></spring:url>
+			<spring:url value="/user-register" var="newUser"></spring:url>
 			<span class="psw"><a href="${newUser}">Register New User</a></span>
 		</div>
 	</form>
