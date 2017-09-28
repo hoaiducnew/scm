@@ -22,42 +22,42 @@ import edu.mum.scm.validator.PlayerId;
 
 @Entity
 public class Player implements Serializable {
-	
+
 	private static final long serialVersionUID = -3433452234089925865L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	@PlayerId
 	private String playerId;
-	
+
 	@Size(min = 4, max = 40, message = "FirstName must lager than 4 characters")
 	private String firstName;
-	
+
 	@Size(min = 4, message = "LastName must lager than 4 characters")
 	private String lastName;
-	
+
 	@Size(min = 4, message = "Biography must lager than 4 characters")
 	private String biography;
-	
+
 	private Double salary;
-	
+
 	@DateTimeFormat(pattern = "MM-dd-yyyy")
 	private Date birthday;
-	
+
 	private String imagePath;
-	
-	 @Transient
-	 private MultipartFile image;
-	
+
+	@Transient
+	private MultipartFile image;
+
 	@Valid
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="Id")
+	@JoinColumn(name = "Id")
 	private PlayerPosition playerPosition;
-	
+
 	@ManyToOne
-	@JoinColumn(name="team_id")
+	@JoinColumn(name = "team_id")
 	private Team team;
 
 	public Team getTeam() {
@@ -131,6 +131,7 @@ public class Player implements Serializable {
 	public void setPlayerPosition(PlayerPosition playerPosition) {
 		this.playerPosition = playerPosition;
 	}
+
 	public MultipartFile getImage() {
 		return image;
 	}
@@ -146,5 +147,5 @@ public class Player implements Serializable {
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
-	
+
 }

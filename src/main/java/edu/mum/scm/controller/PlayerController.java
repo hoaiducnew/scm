@@ -15,13 +15,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.mum.scm.domain.Player;
+import edu.mum.scm.domain.Team;
 import edu.mum.scm.service.PlayerService;
 
 @Controller
+@SessionAttributes({ "team" })
 public class PlayerController {
 
 	@Autowired
@@ -41,7 +44,7 @@ public class PlayerController {
 	@RequestMapping(value = "/listPlayer", method = RequestMethod.GET)
 	public String allPlayers(Model model) {
 		
-		List<Player> players = playerService.getAllPlayer();
+		List<Player> players = playerService.getAllPlayer((Team) model.asMap().get("team"));
 		model.addAttribute("players", players);
 		
 		return "player_list";
@@ -68,7 +71,6 @@ public class PlayerController {
 
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String addPlayer(@ModelAttribute("addPlayer") Player player, Model model) {
-		
 		return "player_add";
 	}
 
@@ -91,7 +93,7 @@ public class PlayerController {
 
 		String path = rootDirectory + "\\resources\\images\\" + player.getFirstName() + ".jpg";
 		player.setImagePath(path);
-		
+		player.setTeam((Team) model.asMap().get("team"));
 		playerService.addPlayer(player);
 		redirectAttributes.addFlashAttribute("player", player);
 		redirectAttributes.addFlashAttribute("message", "Added successfully.");

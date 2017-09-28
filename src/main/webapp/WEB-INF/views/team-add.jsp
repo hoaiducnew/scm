@@ -22,7 +22,7 @@
 		</p>
 
 		<p>
-			<label for="description">Description: </label>
+			<label for="description">Slogan: </label>
 			<form:input path="description" />
 		</p>
 		

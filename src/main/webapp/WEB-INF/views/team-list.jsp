@@ -6,7 +6,7 @@
 	<c:forEach items="${teams}" var="team">
 		<div class="responsive">
 			<div class="gallery">
-				<a target="_blank" href="<spring:url value="/teams/team?id=${ team.id }" />">
+				<a href="<spring:url value="/teams/team?id=${ team.id }" />">
 					<img src="<c:url value="/img/${ team.imagePath }" />" alt="image"  width="300" height="200" />
 				</a>
 				<div class="desc">

@@ -51,7 +51,7 @@
 							</p>
 							
 							<p>
-								<label for="address">Capacity</label>
+								<label for="address">Address</label>
 								<form:input path="address" id="address" />
 							</p>
 							<p>

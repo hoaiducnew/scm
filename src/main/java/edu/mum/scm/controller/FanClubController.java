@@ -35,7 +35,7 @@ public class FanClubController {
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.GET)
-	public String addfanclub(@ModelAttribute("newFanclub") FanClub fanclub) {
+	public String addfanclub(@ModelAttribute FanClub fanClub) {
 		return "fanclub_add";
 	}
 	

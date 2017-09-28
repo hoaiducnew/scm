@@ -19,7 +19,7 @@
 							<strong>${ fanclub.name }</strong><br />
 							${fanclub.description}<br />
 							<a class="player_edit" href="${url}/edit/${fanclub.id}">Edit</a>
-							<a class="player_delete" onclick="delete(${fanclub.id)">Delete</a>
+							<a class="player_delete" onclick="delete(${fanclub.id})">Delete</a>
 						</div>
 					</div>
 				</div>

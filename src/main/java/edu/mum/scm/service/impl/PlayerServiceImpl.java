@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import edu.mum.scm.domain.Player;
+import edu.mum.scm.domain.Team;
 import edu.mum.scm.repository.PlayerRepository;
 import edu.mum.scm.service.PlayerService;
 
@@ -17,10 +18,6 @@ public class PlayerServiceImpl implements PlayerService {
 
 	@Autowired
 	PlayerRepository playerRepository;
-	
-	public List<Player> getAllPlayer(){
-		return (List<Player>) playerRepository.findAll();
-	}
 	
 	// check Id again
 	public Player getPlayer(Long playerId) {
@@ -47,5 +44,10 @@ public class PlayerServiceImpl implements PlayerService {
 		playerTobeUpdated.setLastName(player.getLastName());
 		playerTobeUpdated.setPlayerPosition(player.getPlayerPosition());
 		playerTobeUpdated.setSalary(player.getSalary());
+	}
+
+	@Override
+	public List<Player> getAllPlayer(Team team) {
+		return playerRepository.findByTeam(team);
 	}
 }

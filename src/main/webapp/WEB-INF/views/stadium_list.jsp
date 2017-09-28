@@ -19,7 +19,7 @@
 							<strong>${ stadium.name }</strong><br />
 							${stadium.description}<br />
 							<a class="player_edit" href="${url}/edit/${stadium.id}">Edit</a>
-							<a class="player_delete" onclick="delete(${stadium.id)">Delete</a>
+							<a class="player_delete" onclick="delete(${stadium.id})">Delete</a>
 						</div>
 					</div>
 				</div>
