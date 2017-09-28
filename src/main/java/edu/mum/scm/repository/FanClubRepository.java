@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import edu.mum.scm.domain.FanClub;
 
 @Repository
-public interface FanclubRepository extends CrudRepository<FanClub, Long>{
+public interface FanClubRepository extends CrudRepository<FanClub, Long> {
 	@Query("select f from Fanclub f where f.name= :name")
 	FanClub findFanClubByName(@Param("name") String name);
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import edu.mum.scm.domain.FanClub;
 
-public interface FanclubService {
+public interface FanClubService {
 	public List<FanClub> getAllFanClub();
 	public void addFanClub(FanClub fanClub);
 	public void deleteFanClub(FanClub fanClub);

@@ -7,37 +7,33 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import edu.mum.scm.domain.FanClub;
-import edu.mum.scm.repository.FanclubRepository;
-import edu.mum.scm.service.FanclubService;
+import edu.mum.scm.repository.FanClubRepository;
+import edu.mum.scm.service.FanClubService;
 
 @Service
 @Transactional
-public class FanClubServieImpl implements FanclubService {
-	
+public class FanClubServieImpl implements FanClubService {
+
 	@Autowired
-	FanclubRepository fanclubRepo;
+	FanClubRepository fanclubRepo;
 
 	@Override
 	public List<FanClub> getAllFanClub() {
-		// TODO Auto-generated method stub
 		return (List<FanClub>) fanclubRepo.findAll();
 	}
 
 	@Override
 	public void addFanClub(FanClub fanClub) {
-		// TODO Auto-generated method stub
 		fanclubRepo.save(fanClub);
 	}
 
 	@Override
 	public void deleteFanClub(FanClub fanClub) {
-		// TODO Auto-generated method stub
 		fanclubRepo.delete(fanClub);
 	}
 
 	@Override
 	public void editFanclub(FanClub fanClub) {
-		// TODO Auto-generated method stub
 		FanClub fanclubEdit = fanclubRepo.findOne(fanClub.getId());
 		fanclubEdit.setName(fanClub.getName());
 		fanclubEdit.setDescription(fanClub.getDescription());
@@ -49,13 +45,11 @@ public class FanClubServieImpl implements FanclubService {
 
 	@Override
 	public FanClub getFanClubByName(String name) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public FanClub getFanClubById(Long id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

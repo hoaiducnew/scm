@@ -18,14 +18,14 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.mum.scm.domain.FanClub;
-import edu.mum.scm.service.FanclubService;
+import edu.mum.scm.service.FanClubService;
 
 @Controller
 @RequestMapping(value="/fanclubs")
 public class FanClubController {
 	
 	@Autowired
-	FanclubService fanclubService;
+	FanClubService fanclubService;
 	
 	@RequestMapping(value= {"/","/list"}, method = RequestMethod.GET)
 	public String listfanclub(Model model) {
