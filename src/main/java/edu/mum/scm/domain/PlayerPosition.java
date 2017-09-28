@@ -3,14 +3,16 @@ package edu.mum.scm.domain;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.validation.constraints.Size;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 public class PlayerPosition implements Serializable {
 	
+	private static final long serialVersionUID = -882277280882395676L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

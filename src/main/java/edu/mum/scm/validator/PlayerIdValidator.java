@@ -5,12 +5,11 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-
 import edu.mum.scm.domain.Player;
 import edu.mum.scm.service.PlayerService;
 
-public class PlayerIdValidator implements ConstraintValidator<PlayerId, String>{
-	
+public class PlayerIdValidator implements ConstraintValidator<PlayerId, String> {
+
 	@Autowired
 	private PlayerService playerService;
 
@@ -21,12 +20,12 @@ public class PlayerIdValidator implements ConstraintValidator<PlayerId, String>{
 		Player player = null;
 		try {
 			player = playerService.getPlayerByPlayerId(value);
-			
+
 		} catch (RuntimeException e) {
 			return true;
 		}
-		
-		if(player!= null)
+
+		if (player != null)
 			return false;
 		return true;
 	}

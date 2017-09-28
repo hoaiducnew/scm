@@ -18,8 +18,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.mum.scm.domain.Manager;
-import edu.mum.scm.domain.Manager;
-import edu.mum.scm.domain.Manager;
 import edu.mum.scm.service.ManagerService;
 
 @Controller

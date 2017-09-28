@@ -60,8 +60,6 @@ public class TeamController {
 	@RequestMapping(value = "/team")
 	public String getTeamDetails(@RequestParam("id") Long teamId, Model model, RedirectAttributes redirectAttributes, HttpSession session) {
 		session.setAttribute("team", teamService.getById(teamId));
-//		model.addAttribute("team", teamService.getById(teamId));
-//		redirectAttributes.addFlashAttribute("team", teamService.getById(teamId));
 		return "redirect:/listPlayer";
 	}
 	
