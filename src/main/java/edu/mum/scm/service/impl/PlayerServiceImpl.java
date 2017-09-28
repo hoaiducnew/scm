@@ -7,10 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import edu.mum.scm.domain.Player;
-import edu.mum.scm.domain.Position;
-import edu.mum.scm.domain.Team;
 import edu.mum.scm.repository.PlayerRepository;
-import edu.mum.scm.repository.PositionRepository;
 import edu.mum.scm.service.PlayerService;
 
 
@@ -21,11 +18,8 @@ public class PlayerServiceImpl implements PlayerService {
 	@Autowired
 	PlayerRepository playerRepository;
 	
-	@Autowired
-	PositionRepository positionRepository;
-	
-	public List<Player> getAllPlayer(Team team){
-		return playerRepository.findByTeam(team);
+	public List<Player> getAllPlayer(){
+		return (List<Player>) playerRepository.findAll();
 	}
 	
 	// check Id again
@@ -33,7 +27,11 @@ public class PlayerServiceImpl implements PlayerService {
 		return playerRepository.findOne(playerId);
 	}
 	
-	public void createPlayer(Player player) {
+	public Player getPlayerByPlayerId(String playerId) {
+		return playerRepository.getPlayerByPlayerId(playerId);
+	}
+	
+	public void addPlayer(Player player) {
 		playerRepository.save(player);
 	}
 	
@@ -47,18 +45,7 @@ public class PlayerServiceImpl implements PlayerService {
 		playerTobeUpdated.setBirthday(player.getBirthday());
 		playerTobeUpdated.setFirstName(player.getFirstName());
 		playerTobeUpdated.setLastName(player.getLastName());
-		playerTobeUpdated.setPlayerId(player.getPlayerId());
-		playerTobeUpdated.setPosition(player.getPosition());
+		playerTobeUpdated.setPlayerPosition(player.getPlayerPosition());
 		playerTobeUpdated.setSalary(player.getSalary());
-	}
-
-	@Override
-	public List<Position> getAllPositions() {
-		return (List<Position>) positionRepository.findAll();
-	}
-
-	@Override
-	public Position getPosition(Long positionId) {
-		return positionRepository.findOne(positionId);
 	}
 }

@@ -8,7 +8,7 @@ public interface TeamService {
 	public Team save(Team team);
 	
 	public Team getById(Long id);
-	
+	public Team getByName(String name);
 	
 	public List<Team> getAll();
 }

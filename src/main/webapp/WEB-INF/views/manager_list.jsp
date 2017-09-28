@@ -7,63 +7,68 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Player List</title>
+<title>Manager List</title>
 <script type="text/javascript"
 	src="<spring:url value="/resource/js/cart.js"/>"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
-	<style type="text/css"> @import url(css/players.css); </style>
+<style type="text/css">
+@import url(css/players.css);
+</style>
 
 </head>
 <body>
 	<%@ include file="headerClient.jsp"%>
 
-	<h2>List Player</h2>
-	<table width="100%" border="1" style="margin-top: 50px; min-height: 400px">
+	<h2>List Manager</h2>
+	<table width="100%" border="1"
+		style="margin-top: 50px; min-height: 400px">
 		<tr>
 			<td width="20%" valign="top"><table width="100%" border="1">
 					<tr>
-						<td class="header">Player</td>
+						<td class="header">Manager</td>
 					</tr>
 				</table></td>
 			<td width="60%" valign="top">
-				<form id="players">
+				<form id="Managers">
 
 					<table>
-						<tr class="player">
+						<tr class="Manager">
 							<th>Full Name</th>
 							<th>Biography</th>
-							<th>Position</th>
 							<th>Action</th>
 						</tr>
-						<c:forEach var="player" items="${players}">
+						<c:forEach var="Manager" items="${Managers}">
 							<tr>
-								<td ><a class="player_fullname" href="detail/${player.id}">${player.firstName}  ${player.lastName}</a></td>
-								<td style="width: 60%;">${player.biography}</td>
-								<td>${player.playerPosition.position}</td>
-								<td>
-									<a class="player_edit" href="editPlayer/${player.id}">Edit</a>
-									<button class="player_delete" onclick="deletePlayer(${player.id})">Delete</button>
+								<td><a class="player_fullname"
+									href="detail_manager/${Manager.id}">${Manager.firstName}
+										${Manager.lastName}</a></td>
+								<td style="width: 60%;">${Manager.biography}</td>
+								<td><a class="player_edit" href="editManager/${Manager.id}">Edit</a>
+									<a class="player_delete" href="deleteManager/${Manager.id}">Edit</a>
 								</td>
-							</tr>	
+							</tr>
 						</c:forEach>
 					</table>
 					<br>
-					<div style="float: right"><a class="player_add" href="add">Add Player</a> </div>
-					
+					<div style="float: right">
+						<a class="player_add" href="addManager">Add Manager</a>
+					</div>
+
 
 				</form>
 			</td>
 		</tr>
 	</table>
 
-	
+
 
 	<%@ include file="footerClient.jsp"%>
 </body>
 
 
-<script type="text/javascript" src="<spring:url value="/resource/js/player.js"/>"></script>
+<script type="text/javascript"
+	src="<spring:url value="/resource/js/player.js"/>"></script>
 </html>
 
 

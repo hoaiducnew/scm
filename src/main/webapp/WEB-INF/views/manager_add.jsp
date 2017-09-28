@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Player List</title>
+<title>manager List</title>
 <script type="text/javascript"
 	src="<spring:url value="/resource/js/cart.js"/>"></script>
 <script
@@ -28,18 +28,18 @@
 			<td width="20%" valign="top">
 				<table width="100%" border="1">
 					<tr>
-						<td class="header">Player</td>
+						<td class="header">manager</td>
 					</tr>
 				</table>
 			</td>
 			<td width="60%" valign="top">
 			
-				<form:form modelAttribute="addPlayer" enctype="multipart/form-data">
-						<fieldset> <legend><h1>Add Player</h1></legend>
+				<form:form modelAttribute="addManager" enctype="multipart/form-data">
+						<fieldset> <legend><h1>Add manager</h1></legend>
 							<p>
-								<label for="playerId">Player Id</label>
-								<form:input path="playerId" id="playerId" />
-								<form:errors path="playerId" cssStyle="Color:RED"></form:errors>
+								<label for="managerId">Manager Id</label>
+								<form:input path="managerId" id="managerId" />
+								<form:errors path="managerId" cssStyle="Color:RED"></form:errors>
 								
 							</p>
 							<p>
@@ -66,17 +66,6 @@
 								<label for="birthday">Birthday</label>
 								<form:input path="birthday" id="birthday" />
 								<form:errors path="birthday" cssStyle="Color:RED"></form:errors>
-							</p>
-							<p>
-								<label for="playerPosition.position">Position</label>
-								<form:select path="playerPosition.position">
-									<form:options items="${positions}" />
-								</form:select>
-							</p>
-							<p>
-								<label for="name">Description</label>
-								<form:input path="playerPosition.description" id="playerPosition.description" />
-								<form:errors path="playerPosition.description" cssStyle="Color:RED"></form:errors>
 							</p>
 							<p>
 								<label for="image" class="control-label col-lg-2">Images: </label>
