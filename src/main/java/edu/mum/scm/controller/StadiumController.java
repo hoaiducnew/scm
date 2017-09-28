@@ -34,7 +34,7 @@ public class StadiumController {
 	@Autowired
 	StadiumService stadiumService;
 	
-	@RequestMapping(value="/list", method = RequestMethod.GET)
+	@RequestMapping(value= {"/","/list"}, method = RequestMethod.GET)
 	public String listStadium(Model model) {
 		List<Stadium> stadiums = stadiumService.getAllStadium();
 		model.addAttribute("stadiums", stadiums);
@@ -98,8 +98,10 @@ public class StadiumController {
 		return "redirect:/stadiums/list";
 	}
 	
-	
-	public String deleteStadium() {
-		return "";
+	@RequestMapping(value="/delete/{id}", method = RequestMethod.DELETE)
+	public String deleteStadium(@PathVariable("id") Long id) {
+		Stadium stadium = stadiumService.getStadiumById(id);
+		stadiumService.deleteStadium(stadium);
+		return "redirect:/stadiums/list";
 	}
 }

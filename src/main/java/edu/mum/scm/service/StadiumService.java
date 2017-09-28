@@ -6,9 +6,9 @@ import edu.mum.scm.domain.Stadium;
 
 public interface StadiumService {
 	public List<Stadium> getAllStadium();
-	public void addStadium(Stadium Stadium);
-	public void deleteStadium(Stadium Stadium);
-	public void editStadium(Stadium Stadium);
+	public void addStadium(Stadium stadium);
+	public void deleteStadium(Stadium stadium);
+	public void editStadium(Stadium stadium);
 	public Stadium getStadiumByName(String name);
-	public Stadium getStadiumById(Long Id);
+	public Stadium getStadiumById(Long id);
 }

@@ -16,11 +16,9 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		Principal principal = request.getUserPrincipal();
 		if (principal != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("customer", principal.getName());
+			session.setAttribute("user", principal.getName());
 		}
 
 		return true;
-
 	}
-
 }

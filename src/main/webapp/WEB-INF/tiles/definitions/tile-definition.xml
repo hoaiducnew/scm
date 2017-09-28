@@ -52,5 +52,20 @@
 	<definition name="stadium_edit" extends="baseLayout">
 		<put-attribute name="content" value="/WEB-INF/views/stadium_edit.jsp" />
 	</definition>
+	
+	<definition name="fanclub_list" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/fanclub_list.jsp" />
+	</definition>
+	
+	<definition name="fanclub_add" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/fanclub_add.jsp" />
+	</definition>
+	
+	<definition name="fanclub_edit" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/fanclub_edit.jsp" />
+	</definition>
 
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/login.jsp" />
+	</definition>
 </tiles-definitions>

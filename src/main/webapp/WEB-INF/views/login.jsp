@@ -7,35 +7,27 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<style type="text/css">@import url(css/login.css);</style>
+<style type="text/css">
+@import url(css/login.css);
+</style>
 </head>
 <body>
-	<div id="section">
-	<c:if test="${not empty error}">
-		<div cssStyle="color: red;" >
-			<spring:message
-				code="AbstractUserDetailsAuthenticationProvider.badCredentials" />
-			<br />
+	<form action="<spring:url value="/postLogin"></spring:url>" method="post">
+		<div class="imgcontainer">
+			<img src="<c:url value="/img/avatar.png" />" alt="Avatar"
+				class="avatar" />
 		</div>
-	</c:if>
-	<form class="form-1" action="<spring:url value="/postLogin"></spring:url>"
-		method="post">
-		
-			<p class="field">
-				<input placeholder="User Name" name='username' type="text">
-			</p>
-			<p class="field">
-				<input placeholder="Password" name='password' type="password"
-					value="">
-			</p>
-			<p class="submit">
-			<button type="submit" name="submit"><i>-></i></button>
 
-			</p>
-		</form>
-		<spring:url value="/customer/addCustomer" var="newCustomer">
-	</spring:url>
-	<a href="${newCustomer}">New Customer</a>
-	</div>
+		<div class="container">
+			<label><b>Username</b></label> <input type="text"
+				placeholder="Enter Username" name="username" required> <label><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="password"
+				required>
+
+			<button type="submit">Login</button>
+			<spring:url value="/users/register" var="newUser"></spring:url>
+			<span class="psw"><a href="${newUser}">Register New User</a></span>
+		</div>
+	</form>
 </body>
-</html>	
+</html>

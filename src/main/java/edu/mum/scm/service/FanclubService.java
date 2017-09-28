@@ -10,4 +10,5 @@ public interface FanclubService {
 	public void deleteFanClub(FanClub fanClub);
 	public void editFanclub(FanClub fanClub);
 	public FanClub getFanClubByName(String name);
+	public FanClub getFanClubById(Long id);
 }

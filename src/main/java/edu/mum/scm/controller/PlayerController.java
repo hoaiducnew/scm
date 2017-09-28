@@ -23,7 +23,7 @@ import edu.mum.scm.domain.Team;
 import edu.mum.scm.service.PlayerService;
 
 @Controller
-@SessionAttributes({ "team"})
+@SessionAttributes({ "team" })
 public class PlayerController {
 
 	@Autowired

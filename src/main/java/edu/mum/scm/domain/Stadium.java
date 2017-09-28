@@ -38,9 +38,6 @@ public class Stadium implements Serializable {
 	@Transient
 	private MultipartFile image;
 	
-//	@OneToOne
-//	@JoinColumn(name="address_id")
-//	private Address address;
 	private String address;
 
 	public Long getId() {
@@ -75,14 +72,6 @@ public class Stadium implements Serializable {
 		this.capacity = capacity;
 	}
 
-//	public Address getAddress() {
-//		return address;
-//	}
-//
-//	public void setAddress(Address address) {
-//		this.address = address;
-//	}
-	
 	public String getImagePath() {
 		return imagePath;
 	}

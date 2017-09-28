@@ -3,6 +3,7 @@ package edu.mum.scm.controller;
 import java.io.File;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -22,7 +22,6 @@ import edu.mum.scm.service.TeamService;
 
 @RequestMapping("/teams")
 @Controller
-@SessionAttributes({ "team" })
 public class TeamController {
 
 	@Autowired
@@ -30,6 +29,7 @@ public class TeamController {
 
 	@RequestMapping(value = "/team-add", method = RequestMethod.GET)
 	public String getAddTeamForm(@ModelAttribute Team team) {
+		
 		return "team-add";
 	}
 
@@ -58,8 +58,9 @@ public class TeamController {
 	}
 	
 	@RequestMapping(value = "/team")
-	public String getTeamDetails(@RequestParam("id") Long teamId, Model model, RedirectAttributes redirectAttributes) {
-		model.addAttribute("team", teamService.getById(teamId));
+	public String getTeamDetails(@RequestParam("id") Long teamId, Model model, RedirectAttributes redirectAttributes, HttpSession session) {
+		session.setAttribute("team", teamService.getById(teamId));
+//		model.addAttribute("team", teamService.getById(teamId));
 //		redirectAttributes.addFlashAttribute("team", teamService.getById(teamId));
 		return "redirect:/listPlayer";
 	}

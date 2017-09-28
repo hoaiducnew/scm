@@ -19,7 +19,7 @@
 	
 	<div class="clearfix"></div>
 	
-	<div style="float: left"><a class="player_add" href="teams/team-add">Add Team</a> </div>
+	<div style="float: left"><a class="player_add" href="teams/team-add"><spring:message code="team.add.label"/></a> </div>
 </div>
 
 
