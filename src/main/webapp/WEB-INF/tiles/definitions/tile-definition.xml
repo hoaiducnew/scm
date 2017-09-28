@@ -40,5 +40,17 @@
 	<definition name="player_add" extends="baseLayout">
 		<put-attribute name="content" value="/WEB-INF/views/player_add.jsp" />
 	</definition>
+	
+	<definition name="stadium_list" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/stadium_list.jsp" />
+	</definition>
+	
+	<definition name="stadium_add" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/stadium_add.jsp" />
+	</definition>
+	
+	<definition name="stadium_edit" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/stadium_edit.jsp" />
+	</definition>
 
 </tiles-definitions>

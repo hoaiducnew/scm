@@ -7,9 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Stadium implements Serializable {
@@ -24,18 +26,22 @@ public class Stadium implements Serializable {
 	private Long Id;
 	
 	@NotEmpty
-	@Size(max=50, min=5)
+	@Size(max=50, min=1)
 	private String name;
 	
 	private String description;
 	
 	private String capacity;
 	
-	private String image;
+	private String imagePath;
 	
-	@OneToOne
-	@JoinColumn(name="address_id")
-	private Address address;
+	@Transient
+	private MultipartFile image;
+	
+//	@OneToOne
+//	@JoinColumn(name="address_id")
+//	private Address address;
+	private String address;
 
 	public Long getId() {
 		return Id;
@@ -69,20 +75,37 @@ public class Stadium implements Serializable {
 		this.capacity = capacity;
 	}
 
-	public String getImage() {
-		return image;
+//	public Address getAddress() {
+//		return address;
+//	}
+//
+//	public void setAddress(Address address) {
+//		this.address = address;
+//	}
+	
+	public String getImagePath() {
+		return imagePath;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-	public Address getAddress() {
+	public String getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+
+	public MultipartFile getImage() {
+		return image;
+	}
+
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
+	
 	
 }

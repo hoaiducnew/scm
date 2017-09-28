@@ -10,4 +10,5 @@ public interface StadiumService {
 	public void deleteStadium(Stadium Stadium);
 	public void editStadium(Stadium Stadium);
 	public Stadium getStadiumByName(String name);
+	public Stadium getStadiumById(Long Id);
 }

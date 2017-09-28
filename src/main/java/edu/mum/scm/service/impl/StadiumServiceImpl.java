@@ -36,15 +36,25 @@ public class StadiumServiceImpl implements StadiumService {
 	}
 
 	@Override
-	public void editStadium(Stadium Stadium) {
+	public void editStadium(Stadium stadium) {
 		// TODO Auto-generated method stub
-		
+		Stadium stadiumUpdated = stadiumRepo.findOne(stadium.getId());
+		stadiumUpdated.setName(stadium.getName());
+		stadiumUpdated.setCapacity(stadium.getCapacity());
+		stadiumUpdated.setDescription(stadium.getDescription());
+		stadiumUpdated.setImagePath(stadium.getImagePath());
 	}
 
 	@Override
 	public Stadium getStadiumByName(String name) {
 		// TODO Auto-generated method stub
-		return null;
+		return stadiumRepo.getStadiumByName(name);
+	}
+
+	@Override
+	public Stadium getStadiumById(Long Id) {
+		// TODO Auto-generated method stub
+		return stadiumRepo.findOne(Id);
 	}
 
 }
