@@ -10,6 +10,16 @@ h2 {
 	width: 500px;
 }
 
+.player_img_edit {
+	padding-top: 100px;
+	padding-left: 50px;
+}
+
+.player_img_add {
+	padding-top: 27px;
+	padding-left: 50px;
+}
+
 #myImg:hover {
 	opacity: 0.7;
 }
@@ -168,6 +178,7 @@ input[type=submit]:hover {
 	background-color: #4CAF50;
 	color: white;
 }
+
 .player_edit {
 	background-color: white;
 	color: black;
@@ -184,6 +195,7 @@ input[type=submit]:hover {
 	background-color: #ecb22f;
 	color: white;
 }
+
 .player_delete {
 	background-color: white;
 	color: black;
@@ -199,4 +211,8 @@ input[type=submit]:hover {
 .player_delete:hover {
 	background-color: red;
 	color: white;
+}
+
+.player_fullname:hover {
+	background-color: gainsboro;
 }

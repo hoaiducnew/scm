@@ -1,7 +1,8 @@
 $(document).ready(function() {
 	var modal = document.getElementById('myModal');
 
-	// Get the image and insert it inside the modal - use its "alt" text as a caption
+	// Get the image and insert it inside the modal - use its "alt" text as a
+	// caption
 	var img = document.getElementById('myImg');
 	var modalImg = document.getElementById("img01");
 	var captionText = document.getElementById("caption");
@@ -20,3 +21,24 @@ $(document).ready(function() {
 	}
 
 });
+
+function deletePlayer(id) {
+	
+	var r = confirm("Are you sure you want to delete this player!");
+	if (r == true){
+		var contextRoot = "/" + window.location.pathname.split( '/' )[1];
+		var x = contextRoot;
+		$.ajax({
+			url : contextRoot + '/deletePlayer/' + id,
+			success : function() {
+			},
+			error: function(){						
+				alert('Error while request..');
+			}
+		});
+		
+		
+	}
+		
+
+}

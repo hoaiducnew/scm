@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Player List</title>
+		<title>Manager List</title>
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
 		<link href="<c:url value="/css/players.css" />" rel="stylesheet">
@@ -25,16 +25,16 @@
 			<td width="20%" valign="top">
 				<table width="100%" border="1">
 					<tr>
-						<td class="header">Player</td>
+						<td class="header">Manager</td>
 					</tr>
 				</table>
 			</td>
 			<td width="60%" valign="top">
 
 				<div style="float: left">
-					<img id="myImg" class="player_img_edit"
-						src="<c:url value="/img/${playerForUpdated.playerId}.jpg"></c:url>"
-						alt="${playerForUpdated.firstName}" width="300" height="200">
+					<img id="myImg" class="Manager_img_edit"
+						src="<c:url value="/img/${managerForUpdated.managerId}.jpg"></c:url>"
+						alt="${managerForUpdated.firstName}" width="300" height="200">
 					<!-- The Modal -->
 					<div id="myModal" class="modal">
 						<span class="close">×</span> <img class="modal-content" id="img01">
@@ -42,33 +42,25 @@
 					</div>
 				</div>
 				<div>
-					<h2>${playerForUpdated.firstName} Information:</h2>
+					<h2>${managerForUpdated.firstName} Information:</h2>
 					<div style="padding-left: 600px;">
-						<table class="player-info">
+						<table class="Manager-info">
 							<tr>
 								<td>Full Name</td>
-								<td>${playerForUpdated.firstName}
-									${playerForUpdated.lastName}</td>
+								<td>${managerForUpdated.firstName}
+									${managerForUpdated.lastName}</td>
 							</tr>
 							<tr>
 								<td>Birthday</td>
-								<td>${playerForUpdated.birthday}</td>
+								<td>${managerForUpdated.birthday}</td>
 							</tr>
 							<tr>
 								<td>Biography</td>
-								<td>${playerForUpdated.biography}</td>
+								<td>${managerForUpdated.biography}</td>
 							</tr>
 							<tr>
 								<td>Salary</td>
-								<td>${playerForUpdated.salary}</td>
-							</tr>
-							<tr>
-								<td>Position</td>
-								<td>${playerForUpdated.playerPosition.position}</td>
-							</tr>
-							<tr>
-								<td>Position Description:</td>
-								<td>${playerForUpdated.playerPosition.description}</td>
+								<td>${managerForUpdated.salary}</td>
 							</tr>
 						</table>
 
