@@ -16,6 +16,7 @@
 <style type="text/css"> @import url(css/players.css); </style>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script type="text/javascript" src="<spring:url value="/resource/js/cart.js"/>"></script>
+<script type="text/javascript" src="<spring:url value="/resource/js/player.js"/>"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
 	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   	crossorigin="anonymous"></script>

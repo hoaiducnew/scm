@@ -1,11 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<spring:url value="/stadiums" var="url" />
+
 <table border="1" style="margin-top: 10px; min-height: 400px">
 	<tr>
-		<td width="20%" valign="top">
-			<%@ include file="header.jsp"%>
+		<td width="20%" valign="top"><%@ include file="left-nav.jsp"%>
 		</td>
 		<td width="80%" valign="top">
 			<div style="width:90%; margin:0 auto;">

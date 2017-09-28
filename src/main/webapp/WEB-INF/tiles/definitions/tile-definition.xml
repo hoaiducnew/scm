@@ -25,6 +25,10 @@
 		<put-attribute name="content" value="/WEB-INF/views/team-details.jsp" />
 	</definition>
 	
+	<definition name="player_add" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/player_add.jsp" />
+	</definition>
+	
 	<definition name="player_list" extends="baseLayout">
 		<put-attribute name="content" value="/WEB-INF/views/player_list.jsp" />
 	</definition>
@@ -37,8 +41,20 @@
 		<put-attribute name="content" value="/WEB-INF/views/player_detail.jsp" />
 	</definition>
 	
-	<definition name="player_add" extends="baseLayout">
-		<put-attribute name="content" value="/WEB-INF/views/player_add.jsp" />
+	<definition name="manager_add" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/manager_add.jsp" />
+	</definition>
+	
+	<definition name="manager_list" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/manager_list.jsp" />
+	</definition>
+	
+	<definition name="manager_edit" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/manager_edit.jsp" />
+	</definition>
+	
+	<definition name="manager_detail" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/manager_detail.jsp" />
 	</definition>
 	
 	<definition name="stadium_list" extends="baseLayout">
