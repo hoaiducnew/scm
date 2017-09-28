@@ -12,7 +12,7 @@ import edu.mum.scm.service.FanClubService;
 
 @Service
 @Transactional
-public class FanClubServieImpl implements FanClubService {
+public class FanClubServiceImpl implements FanClubService {
 
 	@Autowired
 	FanClubRepository fanClubRepository;
@@ -50,7 +50,7 @@ public class FanClubServieImpl implements FanClubService {
 
 	@Override
 	public FanClub getFanClubById(Long id) {
-		return null;
+		return fanClubRepository.findOne(id);
 	}
 
 }

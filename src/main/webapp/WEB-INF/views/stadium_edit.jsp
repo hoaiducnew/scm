@@ -20,7 +20,7 @@
 						<legend>Edit Player</legend>
 						<div style="float: left">
 							<img id="myImg"
-								src="<c:url value="/img/${stadium.id}.jpg"></c:url>"
+								src="<c:url value="/img/stadium-${stadium.name}.jpg"></c:url>"
 								alt="image" />
 						</div>
 						<div class = "form_playerEdit">

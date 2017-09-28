@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
+<spring:url value="/stadiums" var="url" />
 <table border="1" style="margin-top: 10px; min-height: 400px">
 	<tr>
 		<td width="20%" valign="top"><%@ include file="left-nav.jsp"%>
@@ -13,13 +13,13 @@
 				<div class="responsive-player">
 					<div class="gallery">
 						<a href="detail/${stadium.id}">
-							<img src="<c:url value="/img/${stadium.id}.jpg" />" alt="image"  width="300" height="200" />
+							<img src="<c:url value="/img/stadium-${stadium.name}.jpg" />" alt="image"  width="300" height="200" />
 						</a>
 						<div class="desc">
 							<strong>${ stadium.name }</strong><br />
 							${stadium.description}<br />
 							<a class="player_edit" href="${url}/edit/${stadium.id}">Edit</a>
-							<a class="player_delete" onclick="delete(${stadium.id})">Delete</a>
+							<a class="player_delete" href="${url}/delete/${stadium.id}">Delete</a>
 						</div>
 					</div>
 				</div>

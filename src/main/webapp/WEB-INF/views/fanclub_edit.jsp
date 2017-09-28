@@ -14,13 +14,12 @@
 					modelAttribute="fanclub" method="POST"
 					enctype="multipart/form-data"
 					action="${url}/edit/${fanclub.id}">
-					<input type="hidden" value="edit" name="type">
 					<form:errors path="*" cssStyle="Color:RED"></form:errors>
 					<fieldset>
 						<legend>Edit Player</legend>
 						<div style="float: left">
 							<img id="myImg"
-								src="<c:url value="/img/${fanclub.id}.jpg"></c:url>"
+								src="<c:url value="/img/fanclub-${fanclub.name}.jpg"></c:url>"
 								alt="image" />
 						</div>
 						<div class = "form_playerEdit">
@@ -55,10 +54,10 @@
 								<label for="address">Address</label>
 								<form:input path="address" id="address" />
 							</p>
-							<p>
-								<label for="image" class="control-label col-lg-2">Images: </label>
-								<form:input path="image" type="file" />
-							</p>
+<!-- 							<p> -->
+<!-- 								<label for="image" class="control-label col-lg-2">Images: </label> -->
+<%-- 								<form:input path="image" type="file" /> --%>
+<!-- 							</p> -->
 								<p id="buttons">
 									<input type="submit" name="submit" type="submit" value="Save">
 								</p>

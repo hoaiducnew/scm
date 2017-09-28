@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 import edu.mum.scm.domain.FanClub;
 
 @Repository
-public interface FanClubRepository extends CrudRepository<FanClub, Long> {
+public interface FanClubRepository extends CrudRepository<FanClub, Long>{
+
 }

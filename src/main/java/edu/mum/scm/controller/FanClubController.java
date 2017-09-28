@@ -51,13 +51,13 @@ public class FanClubController {
 
 		if (image != null && !image.isEmpty()) {
 			try {
-				image.transferTo(new File(rootDirectory + "\\resources\\images\\" + fanclub.getId() + ".jpg"));
+				image.transferTo(new File(rootDirectory + "\\resources\\images\\fanclub-" + fanclub.getName() + ".jpg"));
 			} catch (Exception e) {
 				throw new RuntimeException("Image saving failed", e);
 			}
 		}
 		
-		String path = rootDirectory + "\\resources\\images\\" + fanclub.getId() + ".jpg";
+		String path = rootDirectory + "\\resources\\images\\fanclub-" + fanclub.getName() + ".jpg";
 		fanclub.setImagePath(path);
 		
 		fanclubService.addFanClub(fanclub);

@@ -27,7 +27,7 @@ public class StadiumController {
 	@Autowired
 	StadiumService stadiumService;
 
-	@RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "","/", "/list" }, method = RequestMethod.GET)
 	public String listStadium(Model model) {
 		List<Stadium> stadiums = stadiumService.getAllStadium();
 		model.addAttribute("stadiums", stadiums);
@@ -51,13 +51,13 @@ public class StadiumController {
 
 		if (image != null && !image.isEmpty()) {
 			try {
-				image.transferTo(new File(rootDirectory + "\\resources\\images\\" + stadium.getId() + ".jpg"));
+				image.transferTo(new File(rootDirectory + "\\resources\\images\\stadium-" + stadium.getName() + ".jpg"));
 			} catch (Exception e) {
 				throw new RuntimeException("Image saving failed", e);
 			}
 		}
 
-		String path = rootDirectory + "\\resources\\images\\" + stadium.getId() + ".jpg";
+		String path = rootDirectory + "\\resources\\images\\stadium-" + stadium.getName() + ".jpg";
 		stadium.setImagePath(path);
 
 		// stadium.setTeam((Team) model.asMap().get("team"));
@@ -88,7 +88,7 @@ public class StadiumController {
 		return "redirect:/stadiums/list";
 	}
 
-	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String deleteStadium(@PathVariable("id") Long id) {
 		Stadium stadium = stadiumService.getStadiumById(id);
 		stadiumService.deleteStadium(stadium);
