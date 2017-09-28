@@ -17,17 +17,17 @@
 		<form:errors path="*" class="w3-red" element="div"/>
 		
 		<p>
-			<label for="name">Name *: </label>
+			<label for="name" style="width:100px;display: inline-block;">Name *: </label>
 			<form:input path="name" /> <br />
 		</p>
 
 		<p>
-			<label for="description">Slogan: </label>
+			<label for="description" style="width:100px;display: inline-block;">Slogan: </label>
 			<form:input path="description" />
 		</p>
 		
 		<p>
-			<label for="image" class="control-label col-lg-2">Logo: </label>
+			<label for="image" class="control-label col-lg-2" style="width:100px;display: inline-block;">Logo: </label>
 			<form:input path="image" type="file" />
 			<form:errors path="image" class="w3-red" />
 		</p>
