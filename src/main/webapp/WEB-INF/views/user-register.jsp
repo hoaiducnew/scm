@@ -14,10 +14,10 @@
 <body>
 	<form:form modelAttribute="user" method="POST">
 		<div class="container">
-			<label><b>Username</b></label> <form:input type="text" path="username" placeholder="Enter Username" /> 
+			<label><b>Username</b></label> <form:input type="text" path="username" /> 
 			<label><b>Password</b></label> <form:input type="password" path="password" />
-			<label><b>First Name</b></label> <form:input type="text" path="firstName" placeholder="Enter First Name" />
-			<label><b>Last Name</b></label> <form:input type="text" path="lastName" placeholder="Enter Last Name" />
+			<label><b>First Name</b></label> <form:input type="text" path="firstName" />
+			<label><b>Last Name</b></label> <form:input type="text" path="lastName" />
 			<form:hidden path="role" value="ROLE_USER" />
 			<button type="submit">Register</button>
 		</div>

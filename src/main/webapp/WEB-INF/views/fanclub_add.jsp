@@ -10,11 +10,11 @@
 		<td width="20%" valign="top">
 			<table width="100%" border="1">
 				<tr>
-					<td class="header">FanClub</td>
+					<%@ include file="left-nav.jsp"%>
 				</tr>
 			</table>
 		</td>
-		<td width="60%" valign="top"><form:form modelAttribute="fanClub" enctype="multipart/form-data">
+		<td width="60%" valign="top"><form:form modelAttribute="newfanclub" enctype="multipart/form-data">
 				<form:errors path="*" cssStyle="Color:RED"></form:errors>
 
 				<fieldset>

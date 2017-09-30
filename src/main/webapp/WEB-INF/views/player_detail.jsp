@@ -3,6 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
+<link href="<c:url value="/css/players.css"/>" rel="stylesheet">
 <table border="1" style="margin-top: 10px; min-height: 400px">
 	<tr>
 		<td width="20%" valign="top"><%@ include file="left-nav.jsp"%>
@@ -20,7 +21,7 @@
 				</div>
 			</div>
 			<div>
-				<h2>${playerForUpdated.firstName}Information:</h2>
+				<h2 style=" padding-left: 600px;">${playerForUpdated.firstName}Information:</h2>
 				<div style="padding-left: 600px;">
 					<table class="player-info">
 						<tr>
@@ -53,4 +54,8 @@
 			</div>
 		</td>
 	</tr>
+	
+
 </table>
+
+<script type="text/javascript" src="<spring:url value="/resource/js/player.js"/>"></script>

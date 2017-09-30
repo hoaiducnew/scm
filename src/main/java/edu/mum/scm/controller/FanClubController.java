@@ -85,7 +85,7 @@ public class FanClubController {
 		return "redirect:/fanclubs/list";
 	}
 	
-	@RequestMapping(value="/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
 	public String deletefanclub(@PathVariable("id") Long id) {
 		FanClub fanclub = fanclubService.getFanClubById(id);
 		fanclubService.deleteFanClub(fanclub);

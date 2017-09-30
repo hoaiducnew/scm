@@ -12,7 +12,6 @@
 				<table>
 					<tr class="player">
 						<th>Full Name</th>
-						<th>Biography</th>
 						<th>Position</th>
 						<th>Action</th>
 					</tr>
@@ -20,11 +19,10 @@
 						<tr>
 							<td><a class="player_fullname" href="detail/${player.id}">${player.firstName}
 									${player.lastName}</a></td>
-							<td style="width: 60%;">${player.biography}</td>
 							<td>${player.playerPosition.position}</td>
 							<td><a class="player_edit" href="editPlayer/${player.id}">Edit</a>
-								<button class="player_delete"
-									onclick="deletePlayer(${player.id})">Delete</button></td>
+							
+							<a class="player_delete" href="deletePlayer/${player.id}">Delete</a>
 						</tr>
 					</c:forEach>
 				</table>

@@ -111,9 +111,11 @@ public class PlayerController {
 	}
 	
 	@RequestMapping(value = "/deletePlayer/{id}", method = RequestMethod.GET)
-	public void delete(@PathVariable("id") Long id) {
+	public String delete(@PathVariable("id") Long id) {
 		
 		playerService.deletePlayer(id);
+
+		return "redirect:/listPlayer";
 	}
 
 }

@@ -22,7 +22,7 @@
 									${Manager.lastName}</a></td>
 							<td style="width: 60%;">${Manager.biography}</td>
 							<td><a class="player_edit" href="editManager/${Manager.id}">Edit</a>
-								<a class="player_delete" href="deleteManager/${Manager.id}">Edit</a>
+								<a class="player_delete" href="deleteManager/${Manager.id}">Delete</a>
 							</td>
 						</tr>
 					</c:forEach>

@@ -26,7 +26,7 @@
 			<td width="20%" valign="top">
 				<table width="100%" border="1">
 					<tr>
-						<td class="header">Stadium</td>
+						<%@ include file="left-nav.jsp"%>
 					</tr>
 				</table>
 			</td>
